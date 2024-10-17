@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/e2f9dac6-feea-4cd9-8efd-736649f80bd9)![image](https://github.com/user-attachments/assets/723a2497-d117-4f48-a182-02530532bf59)# Data-structures-with-C++
+# Data-structures-with-C++
 In this repo, I'll try to talk about DS using C++
 ### Course Outlines
 1. Linked list.
