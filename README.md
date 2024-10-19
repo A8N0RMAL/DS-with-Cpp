@@ -96,7 +96,7 @@ In this repo, I'll try to talk about DS using C++
 ![image](https://github.com/user-attachments/assets/17615aea-23c1-4d46-8fec-1fcc0d75e1a4)
 ---
 
-- In summary:
+##### In summary:
 - Simple Queue: Like people in line at a construction company where once served, they leave the system and are not re-entered.
 - Circular Queue: Like a bank, where people are served in cycles with a fixed time, and the process repeats as necessary.
 
