@@ -1,4 +1,4 @@
-# Data-structures-with-C++
+![image](https://github.com/user-attachments/assets/ccffd3c8-73ae-4b2d-a2e2-0cdb276c6297)# Data-structures-with-C++
 In this repo, I'll try to talk about DS using C++
 ### Course Outlines
 1. Linked list.
@@ -57,7 +57,51 @@ In this repo, I'll try to talk about DS using C++
 8. The documentation should explain why it works and what it does.
 9. Be sure to modify the documentation along with the program.
 ---
+![image](https://github.com/user-attachments/assets/4654867d-4bdc-4b51-8c04-274098e9c1b4)
 
+---
+#### Simple queue VS Circular queue
+![image](https://github.com/user-attachments/assets/6d7bf471-feb4-42aa-aa75-201845c8db78)
+
+##### Simple Queue (Linear Queue):
+- Structure: A simple queue is a linear data structure where elements are added at the rear and removed from the front.
+- Memory Management: Once the queue is full, no more elements can be added, even if there are spaces created at the front by dequeuing. This is because the free space at the front cannot be reused.
+- Overflow Condition: When the rear of the queue reaches the end of the available memory (queue is full), it leads to an overflow condition, even if there are empty spaces due to dequeuing.
+- Efficiency: Less efficient in memory usage, as it does not reuse space freed by dequeuing elements.
+- Use Case: Typically used in simple scenarios where dynamic reuse of memory is not necessary.
+
+##### Circular Queue:
+- Structure: A circular queue behaves like a simple queue but treats the memory as a circle. When the rear of the queue reaches the end of the array, it wraps around to the beginning of the array (if there is free space).
+- Memory Management: It efficiently utilizes memory by reusing the space freed by dequeued elements. When the queue is not full, new elements can be added to the beginning of the array after the last element has been dequeued.
+- Overflow Condition: Overflow occurs only when the circular queue is truly full, i.e., when all spaces in the array are occupied.
+- Efficiency: More efficient memory usage compared to a simple queue because it reuses the space.
+- Use Case: Suitable for scenarios where constant memory reuse is required, such as in buffering systems (e.g., CPU scheduling, IO device buffering).
+
+##### A circular queue is generally preferred in cases where continuous reuse of memory is important, while a simple queue is suitable for basic operations without the need for memory optimization.
+
+---
+- Let's take an example: The queue below has initialized with size of 5 elements.
+![image](https://github.com/user-attachments/assets/aed0cab1-10e7-4799-8279-d263c641a0af)
+- Now, when these simple and sircular queues are full, we can not add any other elements in case of simple queue (when rear reaches the max size or the lsat index), In contrast, we cann add elements in circular queue only if other elements are removed then it can be replaced. 
+![image](https://github.com/user-attachments/assets/fd98aaf6-62bb-4286-872d-7f8972cb9e54)
+![image](https://github.com/user-attachments/assets/b7b87d9f-b8e0-44b1-a96d-a7cee41de031)
+---
+
+- Simple Queue (Company Example): Imagine a construction company, where 1,000 people are waiting to buy homes from the company. The company can only process one person at a time, and the processing occurs in the same order they arrive, i.e., first-come, first-served. Once the first person buys a house, they exit the queue, and the next person in line moves forward. This is a typical representation of a simple queue where once a person leaves the line, they are not re-entering it. In a simple queue, each person only goes through the process once, and the queue has a clear beginning and end.
+
+![Screenshot 2024-10-19 201659](https://github.com/user-attachments/assets/864fa070-1bf2-4813-932b-b9d32a1d695b)
+
+---
+
+- Circular Queue (Bank Example): In the bank example, a circular queue can be used to manage customers. Customers continuously come and go, with no clear "start" or "end." Every customer gets a fixed time slot (say, 30 minutes) for their transaction. If a customer’s transaction takes longer than the allotted 30 minutes, they may need to wait again, but they are not removed from the queue entirely — instead, they go back to the end and are served again when their turn comes around. This system loops around indefinitely, making it a circular queue, where the process is ongoing, and the queue cycles back to the beginning when it reaches the end.
+![image](https://github.com/user-attachments/assets/17615aea-23c1-4d46-8fec-1fcc0d75e1a4)
+---
+
+- In summary:
+- Simple Queue: Like people in line at a construction company where once served, they leave the system and are not re-entered.
+- Circular Queue: Like a bank, where people are served in cycles with a fixed time, and the process repeats as necessary.
+
+---
 ### Circular queue: Array-based implementation
 #### The circular queue improves over the simple queue by:
 - Efficiently utilizing memory.
