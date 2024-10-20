@@ -59,6 +59,47 @@ In this repo, I'll try to talk about DS using C++
 ![image](https://github.com/user-attachments/assets/4654867d-4bdc-4b51-8c04-274098e9c1b4)
 
 ---
+
+#### Queue Implementation using Linked List
+![image](https://github.com/user-attachments/assets/108ce0a9-4228-4864-881d-e206ad142aa5)
+
+---
+##### Problem:
+- When implementing a queue with a linked list, adding a new element (enqueue) without using front and rear pointers requires traversing the entire list to find the end. This makes enqueue operations inefficient, taking O(n) time.
+##### Solution:
+- To improve efficiency, we use two pointers:
+- Front: Points to the first element (head) of the queue for fast dequeue.
+- Rear: Points to the last element (tail) of the queue for fast enqueue.
+- This allows both enqueue and dequeue operations to be done in O(1) time, making the queue more efficient.
+![image](https://github.com/user-attachments/assets/e614c68b-9be6-4523-80a8-46b2d145f369)
+---
+
+- Let's dig in deep and code it:
+- At first, we intialize the linked list node.
+![image](https://github.com/user-attachments/assets/34074733-091d-47d0-a5a2-2846a2d6b52d)
+---
+##### enqueue(int value)
+![image](https://github.com/user-attachments/assets/aedf3fb8-3e3b-4785-9adc-bda94ae9b432)
+
+---
+##### dequeue()
+![image](https://github.com/user-attachments/assets/6a7be281-7b9a-42fb-af8f-11984ccac141)
+
+---
+##### peek()
+![image](https://github.com/user-attachments/assets/ae088289-e7e7-480a-b7ae-120ad4803cf0)
+
+---
+##### display()
+![image](https://github.com/user-attachments/assets/02c9d4bb-7e63-4f0e-9d75-0ed3e9e015b8)
+
+---
+- Let's show some examples:
+![image](https://github.com/user-attachments/assets/d4361139-5ca1-4fe6-a007-1729549d0007)
+![image](https://github.com/user-attachments/assets/57373030-082a-4563-a86e-1bc7bbec0969)
+
+---
+
 #### Simple queue VS Circular queue
 ![image](https://github.com/user-attachments/assets/6d7bf471-feb4-42aa-aa75-201845c8db78)
 
