@@ -205,17 +205,55 @@ In this repo, I'll try to talk about DS using C++
 ##### Edge Case Handling:
 - The function handles deletion of the head node separately since it involves updating the head pointer.
 - If the node is not found in the list (additional logic needed), current_node would become NULL, which needs handling to avoid runtime errors.
+---
 
+##### 📌insertAtBeggining 
+- The insertAtBeggining function is used to insert a new node at the very start of a linked list. This function adds a node with a given value and updates the head pointer so that the new node becomes the first node in the list.
+![image](https://github.com/user-attachments/assets/bcd665a1-1710-4429-9bcc-cba74083a0dd)
 
+##### Step-by-Step Explanation
+1. Create a New Node:
+- We create a new node using new Node;. This allocates memory dynamically for the new node and returns a pointer to it, which we store in new_node.
 
+2. Set Node Data:
+- The data field of new_node is set to the value passed to the function. This stores the value in the new node that we want to add at the beginning.
 
+3. Link the New Node to the List:
+- The next pointer of new_node is set to point to the current head node. This links the new node to the existing list, meaning the new node will now point to the former head of the list.
 
+4. Update Head Pointer:
+- Finally, we set head to new_node. This makes the new node the first node in the list by updating the head pointer to point to new_node. Now, any traversal starting from head will go through new_node first.
 
+##### Example Usage in main:
+![image](https://github.com/user-attachments/assets/d333534a-ccc7-418e-909c-9f8376e89fee)
+![image](https://github.com/user-attachments/assets/58061a7e-1258-4897-bf24-23b0ca00c4a5)
 
+---
 
+##### 📌deleteAtBeggining 
+- The deleteAtBeggining function is designed to remove the first node from the linked list. This operation updates the head pointer to point to the second node, effectively removing the original first node from the list.
+![image](https://github.com/user-attachments/assets/a7333d4e-8fc8-4862-9ad5-501f926b3b22)
 
+#### Step-by-Step Explanation
+1. Check if the List is Empty:
+- If head is NULL, it means the linked list is empty. In this case, there's no node to delete, so we exit the function immediately with return;.
 
+2. Store the Current Head Node:
+- We store a pointer to the current head node in first_node. This allows us to keep track of the node that we want to delete, even after updating the head pointer.
 
+3. Update Head Pointer:
+- We set head to first_node->next. This makes the second node (if it exists) the new head of the list. Effectively, the node we intend to delete is no longer linked to the list.
+
+4. Delete the Old Head Node:
+- Finally, we delete the node pointed to by first_node using delete(first_node);. This frees the memory allocated for the old head node, removing it entirely from memory.
+![image](https://github.com/user-attachments/assets/e9e2c4b3-c2f4-473c-b980-8f17f1eb9617)
+![image](https://github.com/user-attachments/assets/c1326c63-d958-4875-8730-e6dd4a2e319d)
+
+##### Example Usage in main:
+![image](https://github.com/user-attachments/assets/04d51a66-6a31-4e84-a61f-2c33c1b8734a)
+![image](https://github.com/user-attachments/assets/307a32e0-6f33-40fb-98e7-03fd6f115c18)
+
+---
 
 
 
