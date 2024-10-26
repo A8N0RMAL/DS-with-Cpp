@@ -157,17 +157,41 @@ In this repo, I'll try to talk about DS using C++
 - Null Checks: Checking if the head is NULL helps handle the case of an empty list, both during insertion and display.
 ---
 
+#### deleteNode(int value)
+- The deleteNode function deletes the first node that contains the specified value.
 
+##### Steps:
 
+1. Initialize Pointers:
+- current_node is set to head, which will traverse the list to locate the node to delete.
+- prev_node is also initialized to head and will keep track of the previous node as we traverse, making it easier to unlink the node we want to delete.
+![image](https://github.com/user-attachments/assets/d5fde05c-fd94-4843-b892-5d8a28970e37)
 
+2. Check if the First Node Contains the Value:
+- If current_node (the first node) contains the value, it means we need to delete the head node.
+- Update head to point to the next node (head = current_node->next).
+- Free the memory of current_node and return from the function since deletion is complete.
+![image](https://github.com/user-attachments/assets/65ecfdca-877f-4418-9e13-0a82a757453e)
 
+3. Traverse the List to Find the Node:
+- If the node to delete is not the first node, start looping through the list.
+- Update prev_node to current_node and move current_node to the next node in each iteration until we find the node with the specified value.
+![image](https://github.com/user-attachments/assets/487d48ae-31da-4ec9-82d2-16deed83cb6c)
 
+4. Unlink and Delete the Node:
+- Once we find the node (current_node->data == value), adjust prev_node->next to skip over current_node, linking prev_node to current_node->next.
+![image](https://github.com/user-attachments/assets/bb2b24e3-2982-4b38-b734-5f07b582a11a)
+> **NOTE:** This function assumes the value exists in the list. If the value might not be present, you would need to handle cases where current_node becomes NULL.
 
+##### Example Execution
+- Initial List Creation:
+![image](https://github.com/user-attachments/assets/7d18b15f-4e39-40ad-9914-91e2fe3de11b)
+![image](https://github.com/user-attachments/assets/c94efd10-3a22-4fb9-a0c7-a52d93822749)
 
+![image](https://github.com/user-attachments/assets/a648c12b-02ce-4fca-b466-753c80fcce76)
+![image](https://github.com/user-attachments/assets/f5722f4e-0706-4cbf-90b9-6da9110b0f38)
 
-
-
-
+---
 
 
 
