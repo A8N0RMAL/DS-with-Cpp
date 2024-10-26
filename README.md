@@ -123,7 +123,7 @@ In this repo, I'll try to talk about DS using C++
 ##### Global Variables
 ![image](https://github.com/user-attachments/assets/c8959a04-b1bc-4231-823d-d231564b671c)
 - The head pointer represents the beginning of the linked list. Initially, it is set to NULL, meaning the list is empty.
-
+---
 #### Functions
 ##### insertNode(int value)
 ##### Steps:
