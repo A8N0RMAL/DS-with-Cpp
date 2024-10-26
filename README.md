@@ -125,7 +125,7 @@ In this repo, I'll try to talk about DS using C++
 - The head pointer represents the beginning of the linked list. Initially, it is set to NULL, meaning the list is empty.
 ---
 #### Functions
-##### insertNode(int value)
+##### 📌insertNode(int value)
 ##### Steps:
 1. Create a new node and initialize its data to the provided value and its next pointer to NULL.
 ![image](https://github.com/user-attachments/assets/fd22dc43-96fd-47f8-987e-fdefa4f0f631)
@@ -136,7 +136,7 @@ In this repo, I'll try to talk about DS using C++
 ![image](https://github.com/user-attachments/assets/97d0e16f-e80b-4ea9-9bd3-38ceaa7231f1)
 4. Link the last node’s next pointer to the new node.
 ---
-#### displayNode()
+#### 📌displayNode()
 - This function displays all the nodes in the list.
 ##### Steps:
 1. Check if the list is empty (i.e., head is NULL):
@@ -157,7 +157,7 @@ In this repo, I'll try to talk about DS using C++
 - Null Checks: Checking if the head is NULL helps handle the case of an empty list, both during insertion and display.
 ---
 
-#### deleteNode(int value)
+#### 📌deleteNode(int value)
 - The deleteNode function deletes the first node that contains the specified value.
 
 ##### Steps:
@@ -181,18 +181,30 @@ In this repo, I'll try to talk about DS using C++
 4. Unlink and Delete the Node:
 - Once we find the node (current_node->data == value), adjust prev_node->next to skip over current_node, linking prev_node to current_node->next.
 ![image](https://github.com/user-attachments/assets/bb2b24e3-2982-4b38-b734-5f07b582a11a)
-> **NOTE:** This function assumes the value exists in the list. If the value might not be present, you would need to handle cases where current_node becomes NULL.
-
+---
+> ⚠️**NOTE:** This function assumes the value exists in the list. If the value might not be present, you would need to handle cases where current_node becomes NULL.
+---
 ##### Example Execution
 - Initial List Creation:
 ![image](https://github.com/user-attachments/assets/7d18b15f-4e39-40ad-9914-91e2fe3de11b)
+- Output:
 ![image](https://github.com/user-attachments/assets/c94efd10-3a22-4fb9-a0c7-a52d93822749)
-
+- Delete Node:
 ![image](https://github.com/user-attachments/assets/a648c12b-02ce-4fca-b466-753c80fcce76)
+- Output After Deletion:
 ![image](https://github.com/user-attachments/assets/f5722f4e-0706-4cbf-90b9-6da9110b0f38)
 
 ---
+#### Key Points
+##### Traversal and Deletion:
+- We traverse the list to find the target node and maintain a pointer to the previous node for easy linking and unlinking.
 
+##### Memory Management:
+- After unlinking the target node, we use free() to release the memory allocated for it.
+
+##### Edge Case Handling:
+- The function handles deletion of the head node separately since it involves updating the head pointer.
+- If the node is not found in the list (additional logic needed), current_node would become NULL, which needs handling to avoid runtime errors.
 
 
 
@@ -280,15 +292,15 @@ In this repo, I'll try to talk about DS using C++
 - At first, we intialize the linked list node.
 ![image](https://github.com/user-attachments/assets/34074733-091d-47d0-a5a2-2846a2d6b52d)
 ---
-##### enqueue(int value)
+##### 📌enqueue(int value)
 ![image](https://github.com/user-attachments/assets/aedf3fb8-3e3b-4785-9adc-bda94ae9b432)
 
 ---
-##### dequeue()
+##### 📌dequeue()
 ![image](https://github.com/user-attachments/assets/6a7be281-7b9a-42fb-af8f-11984ccac141)
 
 ---
-##### peek()
+##### 📌peek()
 ![image](https://github.com/user-attachments/assets/ae088289-e7e7-480a-b7ae-120ad4803cf0)
 
 ---
@@ -359,7 +371,7 @@ In this repo, I'll try to talk about DS using C++
 
 ---
 - Let's dig in deep and talk about circular queue functions:
-#### isEmpty()
+#### 📌isEmpty()
 - circular queue will be empty in only one case if Front = Rear = -1
 ![image](https://github.com/user-attachments/assets/13327e54-1c36-4835-8166-7d67f2db7d66)
 - Unlike simple queue, it will not be empty when Front > Rear, take a look at both pics below:
@@ -371,7 +383,7 @@ In this repo, I'll try to talk about DS using C++
 ![image](https://github.com/user-attachments/assets/0b188943-0d92-4d13-a7da-5193881fb6e2)
 
 --- 
-#### isFull()
+#### 📌isFull()
 - circular queue will be full in 2 cases:
 1. if Front = 0, Rear = size-1, Front points to the first element and Rear points to the last element.
 ![image](https://github.com/user-attachments/assets/c29d38ed-7c27-4bb3-b70d-3f49199b1f79)
@@ -384,7 +396,7 @@ In this repo, I'll try to talk about DS using C++
 
 ---
 
-#### enqueue(int value)
+#### 📌enqueue(int value)
 - We have to check whether the queue is full so we can add items, now we have 3 cases:
 1. if queue is empty -> Front = Rear = -1
 ![image](https://github.com/user-attachments/assets/3a670716-5584-4b71-9b63-f1e2fae4e381)
@@ -401,7 +413,7 @@ In this repo, I'll try to talk about DS using C++
 
 ---
 
-#### dequeue()
+#### 📌dequeue()
 - We have to check whether the queue is empty so we can remove items. now we have 3 cases:
 1. If queue is full like this.
 ![image](https://github.com/user-attachments/assets/f9d9b4c7-dcbc-403a-a8ac-5028af75a355)
@@ -421,13 +433,13 @@ In this repo, I'll try to talk about DS using C++
 ![image](https://github.com/user-attachments/assets/d0aa965f-5819-4dab-840a-c949520eb3d1)
 
 ---
-#### peek(int value)
+#### 📌peek(int value)
 - Returns Front, don't forget to check whether the queue is empty.
 ##### Code
 ![image](https://github.com/user-attachments/assets/9eba388f-6dc7-4524-8307-10627f13a2ae)
 
 ---
-#### display()
+#### 📌display()
 - We have 2 cases.
 1. Front <= Rear. it's simple by using a loop from Front to Rear.
 ![image](https://github.com/user-attachments/assets/bedbd5d8-1b1c-41de-8dfc-3ee310693187)
