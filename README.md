@@ -60,6 +60,184 @@ In this repo, I'll try to talk about DS using C++
 
 ---
 
+#### Linked Lists VS Arrays
+#### Linked Lists
+- A linked list is a collection of nodes where each node contains data and a reference (link) to the next node in the sequence. There are various types of linked lists, including singly, doubly, and circular linked lists.
+
+##### Characteristics:
+- Dynamic Size: Linked lists can grow or shrink in size during runtime.
+- Sequential Access: Nodes must be accessed sequentially, which makes lookup slower (O(n) time complexity).
+- Memory Allocation: Memory is allocated dynamically and non-contiguously; each node points to the next.
+
+##### Linked List Example in C++
+- For a linked list, we need to create a Node structure, where each node contains data and a pointer to the next node. Here’s an example of a simple linked list with 3 nodes:
+![image](https://github.com/user-attachments/assets/ea26aa80-2d4c-496b-b4a4-ed0fbda2247b)
+##### Explanation:
+- Node Structure: Defines a linked list node with an int data field and a Node* next field for the pointer to the next node.
+- Creating Nodes: Each node (head, second, third) is dynamically allocated and linked to the next one.
+- Traversing: The printList function traverses the linked list and prints each node’s data.
+
+##### Advantages:
+- Flexible Size: Can easily grow or shrink as nodes are added or removed.
+- Efficient Insertions/Deletions: Inserting or deleting nodes is faster (O(1)) if we have a pointer to the node.
+
+##### Disadvantages:
+- Slow Access: Sequential access makes lookup slower.
+- Memory Overhead: Each node requires extra memory to store a reference to the next node.
+
+#### Arrays
+- An array is a data structure that stores a fixed-size, sequential collection of elements of the same type. Each element in an array is accessed using an index.
+
+##### Characteristics:
+- Fixed Size: The size of an array is determined at the time of creation and cannot be changed.
+- Direct Access: Elements can be accessed directly via indices, which makes lookup fast (O(1) time complexity).
+- Memory Allocation: Arrays use contiguous memory allocation, meaning that all elements are stored next to each other in memory.
+
+##### Array Example in C++
+- In C++, an array is declared with a fixed size. Here’s an example of creating and accessing an array:
+![image](https://github.com/user-attachments/assets/6075f100-7ada-4469-ba58-70e866fa5456)
+##### Explanation:
+- The array arr holds 5 integers.
+- Elements are accessed using zero-based indexing (arr[2]).
+- Array elements can be modified directly.
+
+##### Advantages:
+- Flexible Size: Can easily grow or shrink as nodes are added or removed.
+- Efficient Insertions/Deletions: Inserting or deleting nodes is faster (O(1)) if we have a pointer to the node.
+
+##### Disadvantages:
+- Slow Access: Sequential access makes lookup slower.
+- Memory Overhead: Each node requires extra memory to store a reference to the next node.
+
+#### Comparison Summary
+![image](https://github.com/user-attachments/assets/6cb0ca9b-7d76-4b1d-88d3-e068b77a5f14)
+
+---
+#### Linked Lists
+##### Structure Definition
+![image](https://github.com/user-attachments/assets/172fbfad-0347-4f01-9437-a86ae5b1109f)
+- The Node structure defines a node in the linked list. Each node has two components:
+- data: an integer value that stores the data in the node.
+- next: a pointer to the next node in the list.
+
+##### Global Variables
+![image](https://github.com/user-attachments/assets/c8959a04-b1bc-4231-823d-d231564b671c)
+- The head pointer represents the beginning of the linked list. Initially, it is set to NULL, meaning the list is empty.
+
+#### Functions
+##### insertNode(int value)
+##### Steps:
+1. Create a new node and initialize its data to the provided value and its next pointer to NULL.
+![image](https://github.com/user-attachments/assets/fd22dc43-96fd-47f8-987e-fdefa4f0f631)
+2. Check if the list is empty (i.e., if head is NULL):
+- If empty, make head point to the new node, making it the first element in the list.
+![image](https://github.com/user-attachments/assets/0000bde8-8954-4c3a-8d2e-85e746b1f90f)
+3. If the list is not empty, find the last node (the node whose next pointer is NULL). Traverse the list starting from head and update last_node until the end of the list is reached.
+![image](https://github.com/user-attachments/assets/97d0e16f-e80b-4ea9-9bd3-38ceaa7231f1)
+4. Link the last node’s next pointer to the new node.
+---
+#### displayNode()
+- This function displays all the nodes in the list.
+##### Steps:
+1. Check if the list is empty (i.e., head is NULL):
+- If empty, simply return without displaying anything.
+2. If the list is not empty, traverse the list starting from head and print the data of each node, followed by a space.
+![image](https://github.com/user-attachments/assets/564e46fd-ea50-41b6-8822-66c48bf92753)
+
+##### main Function
+- The main function is the entry point of the program. Here’s what it does:
+1. It calls insertNode four times to add nodes with values 5, 10, 15, and 7 to the list.
+2. It calls displayNode to output all the nodes in the list.
+![image](https://github.com/user-attachments/assets/356a3c59-c814-47b6-9ea1-7f70bd68ae3d)
+![image](https://github.com/user-attachments/assets/2f2ccfef-bfee-478a-a3d0-b58b7ea92b29)
+---
+#### Key Points
+- Memory Allocation: We use new to allocate memory for each new node. This is crucial for linked lists because each node is dynamically created and linked.
+- Pointer Manipulation: The next pointer is essential for linking nodes and traversing the list.
+- Null Checks: Checking if the head is NULL helps handle the case of an empty list, both during insertion and display.
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
 #### Queue Implementation using Linked List
 ![image](https://github.com/user-attachments/assets/108ce0a9-4228-4864-881d-e206ad142aa5)
 
