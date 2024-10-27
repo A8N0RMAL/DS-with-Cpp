@@ -255,19 +255,39 @@ In this repo, I'll try to talk about DS using C++
 
 ---
 
+##### 📌deleteAtEnd 
+- The deleteAtEnd function removes the last node from the linked list. This function handles three cases:
+1. If the list is empty.
+2. If the list has only one node.
+3. If the list has more than one node.
+![image](https://github.com/user-attachments/assets/717978aa-375f-4130-adc0-34514bfc8f0f)
+---
+##### 📌Code Breakdown
+![image](https://github.com/user-attachments/assets/a6ec8a2d-086d-4c93-b250-f6cd23d9ef63)
 
+---
+#### Step-by-Step Explanation
+1. Check if the List is Empty:
+- If head is NULL, it means the linked list is empty. In this case, there's no node to delete, so we exit the function immediately with return;.
 
+2. Check if the List Has Only One Node:
+- If head->next is NULL, it indicates there is only one node in the list (pointed to by head).
+- We delete the only node using delete(head); and set head to NULL, which makes the list empty.
 
+3. Delete the Last Node if the List Has Multiple Nodes:
+- We initialize a pointer ptr to traverse the list.
+- We stop at the second last node (the node whose next points to the last node).
+- We delete the last node by calling delete(ptr->next); and then set ptr->next to NULL to mark it as the new last node.
+---
+##### Example Usage in main:
+![image](https://github.com/user-attachments/assets/4b148ed4-2a07-4ccf-8363-2774610de04d)
+##### In this example, after calling deleteAtEnd, the list becomes:
+![image](https://github.com/user-attachments/assets/8e0d0f15-842a-465f-afbf-1522d37e15b2)
 
-
-
-
-
-
-
-
-
-
+---
+> ⚠️**NOTE:** This function handles three cases: an empty list, a single-node list, and a multi-node list.
+> ⚠️**NOTE:** delete(ptr->next); is used to delete the last node, and ptr->next = NULL; marks the new end of the list.
+---
 
 
 
