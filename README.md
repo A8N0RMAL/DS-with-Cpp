@@ -71,6 +71,7 @@ In this repo, I'll try to talk about DS using C++
 
 ##### Linked List Example in C++
 - For a linked list, we need to create a Node structure, where each node contains data and a pointer to the next node. Here’s an example of a simple linked list with 3 nodes:
+
 ![image](https://github.com/user-attachments/assets/ea26aa80-2d4c-496b-b4a4-ed0fbda2247b)
 ##### Explanation:
 - Node Structure: Defines a linked list node with an int data field and a Node* next field for the pointer to the next node.
@@ -313,6 +314,7 @@ Here's a detailed explanation of each function in this C++ stack implementation,
 
 ![image](https://github.com/user-attachments/assets/fd7378a5-9b3c-4587-8b3e-8437917d1bd0)
 
+---
 
 #### 📌`int pop()`
 - The `pop` function removes and returns the top element from the stack.
@@ -328,6 +330,7 @@ Here's a detailed explanation of each function in this C++ stack implementation,
 
 ![image](https://github.com/user-attachments/assets/d8235e24-b833-4f74-9d62-074ecad5bd25)
 
+---
 
 #### 📌`int peek()`
 - The `peek` function returns the top element of the stack without removing it.
@@ -343,6 +346,7 @@ Here's a detailed explanation of each function in this C++ stack implementation,
 
 ![image](https://github.com/user-attachments/assets/c2f1890f-ecae-482f-9093-38717ffb53bc)
 
+---
 
 #### 📌`void display()`
 - The `display` function prints all elements in the stack from top to bottom.
@@ -357,6 +361,7 @@ Here's a detailed explanation of each function in this C++ stack implementation,
 
 ![image](https://github.com/user-attachments/assets/3ff05203-cea6-4380-950a-302b86687dc7)
 
+---
 
 #### 📌Example Usage in `main`
 - In the `main` function:
