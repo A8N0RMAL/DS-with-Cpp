@@ -290,7 +290,88 @@ In this repo, I'll try to talk about DS using C++
 ---
 
 
+Here's a detailed explanation of each function in this C++ stack implementation, which you can use as documentation for your GitHub repository.
 
+---
+
+#### Stack Implementation Using Array
+- This code demonstrates a simple stack implementation in C++ using an array. The stack has a fixed size of `5` defined by `stackSize`. The stack operations (`push`, `pop`, `peek`, and `display`) are implemented as functions, and the stack is controlled using a `top` variable, which tracks the index of the current top element in the stack.
+![image](https://github.com/user-attachments/assets/996391d6-b562-40d4-b767-de06b15df443)
+- The `Stack` array holds the stack elements, and `top` keeps track of the last added element’s position. If `top` is `-1`, the stack is empty.
+
+#### 📌`void push(int value)`
+- The `push` function adds an element to the top of the stack.
+
+**Function Details:**
+- **Parameters**: Takes an integer `value` that is the element to be added to the stack.
+- **Logic**:
+  - Checks if the stack is full by comparing `top` with `stackSize - 1`. If full, it does nothing (`Stack overflow`).
+  - If the stack has space, it increments `top` and stores the `value` at the new top position.
+- **Edge Case**: Stack overflow when trying to push to a full stack.
+
+**Code**:
+![image](https://github.com/user-attachments/assets/fd7378a5-9b3c-4587-8b3e-8437917d1bd0)
+
+
+#### 📌`int pop()`
+- The `pop` function removes and returns the top element from the stack.
+
+**Function Details:**
+- **Return Type**: Returns an integer value, which is the top element of the stack.
+- **Logic**:
+  - Checks if the stack is empty by seeing if `top` is `-1`. If empty, it returns `0` to indicate underflow.
+  - If not empty, it returns `Stack[top]` and then decrements `top` to remove the element.
+- **Edge Case**: Stack underflow when trying to pop from an empty stack.
+
+**Code**:
+![image](https://github.com/user-attachments/assets/d8235e24-b833-4f74-9d62-074ecad5bd25)
+
+
+#### 📌`int peek()`
+- The `peek` function returns the top element of the stack without removing it.
+
+**Function Details:**
+- **Return Type**: Returns an integer, the top element of the stack.
+- **Logic**:
+  - Checks if the stack is empty by checking if `top` is `-1`. If empty, it returns `0` to indicate an empty stack.
+  - If not empty, it returns `Stack[top]`, the current top element.
+- **Edge Case**: Stack underflow when attempting to peek an empty stack.
+
+**Code**:
+![image](https://github.com/user-attachments/assets/c2f1890f-ecae-482f-9093-38717ffb53bc)
+
+
+### 📌`void display()`
+- The `display` function prints all elements in the stack from top to bottom.
+
+**Function Details:**
+- **Logic**:
+  - Checks if the stack is empty by seeing if `top` is `-1`. If empty, it simply returns.
+  - If not empty, it uses a `for` loop to print each element from `top` down to `0`, showing the stack elements in order from top to bottom.
+- **Edge Case**: If the stack is empty, it does not display anything.
+
+**Code**:
+![image](https://github.com/user-attachments/assets/3ff05203-cea6-4380-950a-302b86687dc7)
+
+
+#### 📌Example Usage in `main`
+- In the `main` function:
+1. Elements `5`, `15`, `25`, and `35` are pushed onto the stack.
+2. The `display` function is called to print the stack, showing the elements from top to bottom.
+3. The `peek` function is used to check the top element.
+4. The `pop` function removes the top element (`35`), and `peek` and `display` are called again to show the new top and the modified stack contents.
+![image](https://github.com/user-attachments/assets/6d840c4d-2ace-441c-8ad1-97df6b410214)
+![image](https://github.com/user-attachments/assets/f3065cc1-9807-44ff-9c65-e117b037dc68)
+
+---
+
+#### Summary of Functions
+1. **push(int value)**: Adds `value` to the stack if there’s space.
+2. **int pop()**: Removes and returns the top element if the stack is not empty.
+3. **int peek()**: Returns the top element without removing it.
+4. **void display()**: Displays all stack elements from top to bottom.
+
+---
 
 
 
