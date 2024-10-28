@@ -384,10 +384,6 @@ Here's a detailed explanation of each function in this C++ stack implementation,
 
 ---
 
-Here’s an explanation of each function in the linked list-based stack implementation for your GitHub repository documentation. This stack implementation uses a linked list, where each `Node` represents an element in the stack.
-
----
-
 #### Stack implementation using Linked list 
 #### Explanation of Functions in the Linked List-Based Stack Implementation
 
