@@ -300,6 +300,8 @@ Here's a detailed explanation of each function in this C++ stack implementation,
 ![image](https://github.com/user-attachments/assets/996391d6-b562-40d4-b767-de06b15df443)
 - The `Stack` array holds the stack elements, and `top` keeps track of the last added element’s position. If `top` is `-1`, the stack is empty.
 
+---
+
 #### 📌`void push(int value)`
 - The `push` function adds an element to the top of the stack.
 
