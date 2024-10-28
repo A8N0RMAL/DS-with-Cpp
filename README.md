@@ -384,6 +384,124 @@ Here's a detailed explanation of each function in this C++ stack implementation,
 
 ---
 
+Here’s an explanation of each function in the linked list-based stack implementation for your GitHub repository documentation. This stack implementation uses a linked list, where each `Node` represents an element in the stack.
+
+---
+
+#### Stack implementation using Linked list 
+#### Explanation of Functions in the Linked List-Based Stack Implementation
+
+- The stack is implemented using a linked list, with each `Node` holding:
+- `data`: an integer value stored in the node.
+- `next`: a pointer to the next node in the stack.
+
+The top of the stack is tracked by the pointer `top`, which points to the last inserted node.
+
+#### 📌Struct Definition
+![image](https://github.com/user-attachments/assets/5ceaebe7-fcc5-4fdf-96c3-04d6c647470a)
+
+Each `Node` contains:
+- `data`: An integer representing the value stored in the node.
+- `next`: A pointer to the next node in the stack.
+
+#### 📌Global Variable
+![image](https://github.com/user-attachments/assets/d0b892d2-8152-4bab-9b0d-e16b7a8993a3)
+
+- The `top` pointer keeps track of the top node of the stack. It is initially set to `NULL`, indicating an empty stack.
+
+---
+
+### 📌1. `push(int value)`
+![image](https://github.com/user-attachments/assets/0419c4ce-a8a7-46c2-bbda-e25514d4d37b)
+
+
+**Purpose**: Adds a new element with value `value` to the top of the stack.
+- A new `Node` is created and initialized with the given `value`.
+- The new node's `next` pointer is set to point to the current `top` node.
+- `top` is then updated to point to this new node, making it the new top of the stack.
+
+**Example**:
+- If the stack is `10 -> 20 -> NULL`, calling `push(5)` will result in `5 -> 10 -> 20 -> NULL`.
+
+---
+
+### 📌2. `pop()`
+![image](https://github.com/user-attachments/assets/088375e7-5191-489c-a53e-1e87c34473a4)
+
+
+**Purpose**: Removes the top element from the stack.
+- If `top` is `NULL`, the stack is empty, so we exit the function to avoid underflow.
+- Otherwise, we store the current `top` node in a temporary pointer `first_node`.
+- `top` is updated to point to the next node (`first_node->next`), effectively removing the top node from the stack.
+- Finally, the old top node is deleted to free memory.
+
+**Example**:
+- If the stack is `5 -> 10 -> 20 -> NULL`, calling `pop()` will result in `10 -> 20 -> NULL`.
+
+---
+
+### 📌3. `peek()`
+![image](https://github.com/user-attachments/assets/86f18f42-2b4c-42ac-a1a9-4f439392df8d)
+
+
+**Purpose**: Retrieves the value of the top element without removing it.
+- If `top` is `NULL`, the stack is empty, so it returns `-1` to indicate stack underflow.
+- Otherwise, it returns the `data` stored in the top node.
+
+**Example**:
+- If the stack is `5 -> 10 -> 20 -> NULL`, calling `peek()` will return `5`.
+
+---
+
+### 📌4. `display()`
+![image](https://github.com/user-attachments/assets/b978af16-b382-4002-aabe-8da1fccd90b9)
+
+
+**Purpose**: Prints all elements in the stack from top to bottom.
+- If `top` is `NULL`, the stack is empty, so it returns.
+- Otherwise, it traverses the stack from `top` to the end, printing each node's `data` value.
+- After traversing, a newline is printed.
+
+**Example**:
+- If the stack is `5 -> 10 -> 20 -> NULL`, calling `display()` will output: `5 10 20`.
+
+---
+
+#### 📌Code Example with Output
+- Here’s how the `main` function interacts with the stack:
+![image](https://github.com/user-attachments/assets/88e54ac2-cf30-4247-9767-c3dcdde59e0a)
+
+#### Expected Output
+![image](https://github.com/user-attachments/assets/0f0f5049-a4a5-405e-96ab-d58364bc9004)
+
+### Explanation of the Output
+
+1. `display();` after pushing `5`, `15`, `25`, and `35`:
+   - The stack is now `35 -> 25 -> 15 -> 5`, so `display()` prints `35 25 15 5`.
+   
+2. `cout << peek() << endl;`:
+   - `peek()` returns the top element, which is `35`, so it prints `35`.
+
+3. `pop();` followed by `cout << peek() << endl;`:
+   - `pop()` removes the top element (`35`), making `25` the new top.
+   - `peek()` now returns `25`, so it prints `25`.
+
+4. `display();` after the `pop()`:
+   - The stack is now `25 -> 15 -> 5`, so `display()` prints `25 15 5`. 
+
+- This output shows the stack's behavior with each operation: inserting, viewing, and removing elements while maintaining the Last-In-First-Out (LIFO) order.
+
+---
+
+#### Summary
+
+- **`push(int value)`**: Adds `value` to the top of the stack.
+- **`pop()`**: Removes the top element from the stack.
+- **`peek()`**: Returns the value of the top element without removing it.
+- **`display()`**: Prints all elements from the top to the bottom of the stack.
+
+- This linked list-based stack implementation is dynamic, meaning it can grow and shrink as needed, unlike an array-based stack which has a fixed size.
+---
 
 
 
