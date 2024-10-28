@@ -310,6 +310,7 @@ Here's a detailed explanation of each function in this C++ stack implementation,
 - **Edge Case**: Stack overflow when trying to push to a full stack.
 
 **Code**:
+
 ![image](https://github.com/user-attachments/assets/fd7378a5-9b3c-4587-8b3e-8437917d1bd0)
 
 
@@ -324,6 +325,7 @@ Here's a detailed explanation of each function in this C++ stack implementation,
 - **Edge Case**: Stack underflow when trying to pop from an empty stack.
 
 **Code**:
+
 ![image](https://github.com/user-attachments/assets/d8235e24-b833-4f74-9d62-074ecad5bd25)
 
 
@@ -338,10 +340,11 @@ Here's a detailed explanation of each function in this C++ stack implementation,
 - **Edge Case**: Stack underflow when attempting to peek an empty stack.
 
 **Code**:
+
 ![image](https://github.com/user-attachments/assets/c2f1890f-ecae-482f-9093-38717ffb53bc)
 
 
-### 📌`void display()`
+#### 📌`void display()`
 - The `display` function prints all elements in the stack from top to bottom.
 
 **Function Details:**
@@ -351,6 +354,7 @@ Here's a detailed explanation of each function in this C++ stack implementation,
 - **Edge Case**: If the stack is empty, it does not display anything.
 
 **Code**:
+
 ![image](https://github.com/user-attachments/assets/3ff05203-cea6-4380-950a-302b86687dc7)
 
 
