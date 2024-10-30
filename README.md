@@ -56,9 +56,6 @@ In this repo, I'll try to talk about DS using C++
 8. The documentation should explain why it works and what it does.
 9. Be sure to modify the documentation along with the program.
 ---
-![image](https://github.com/user-attachments/assets/4654867d-4bdc-4b51-8c04-274098e9c1b4)
-
----
 
 #### Linked Lists VS Arrays
 #### Linked Lists
@@ -499,43 +496,188 @@ Each `Node` contains:
 - This linked list-based stack implementation is dynamic, meaning it can grow and shrink as needed, unlike an array-based stack which has a fixed size.
 ---
 
+#### Queue data structure
+- A **queue** is a linear data structure that operates on a **First In, First Out (FIFO)** principle. This means that elements are added from one end (the rear) and removed from the other (the front), so the first element added is the first one removed, similar to people waiting in line.
+![image](https://github.com/user-attachments/assets/4654867d-4bdc-4b51-8c04-274098e9c1b4)
+![image](https://github.com/user-attachments/assets/39394dbf-af83-4a35-9e26-4b78d5e24e70)
 
+---
+#### Queue types in data structure
+#### 1. Simple Queue (or Linear Queue)
+- A **simple queue** follows the basic FIFO principle where elements are added to the end and removed from the front.
 
+**Example**:
+- Imagine a line at a coffee shop where each person is served in the order they arrive. The person who came first is the first to be served, and as each person leaves, new arrivals are added to the end of the line.
 
+**Illustration**:
+- Operations: Enqueue (add to rear) and Dequeue (remove from front)
+- Queue: [1, 2, 3, 4] —> after dequeuing, it becomes [2, 3, 4]
+![image](https://github.com/user-attachments/assets/dbdc32ad-f735-44f5-871e-90dc46f26ec5)
+- We cannot add more items because they are added from rear and it reaches the maximum size.
+![image](https://github.com/user-attachments/assets/462cd7bf-33b4-4420-aec4-5434ffdf86f6)
+- Then the other type of queue '(Circular queue)' solves this problem.
 
+---
 
+#### 2. Circular Queue
+- In a **circular queue**, the end of the queue wraps around to connect back to the beginning, forming a circular structure. This helps efficiently utilize space, especially in situations where fixed memory is a limitation.
 
+**Example**:
+- Consider a circular conveyor belt that rotates; items are added in a loop. When the queue is full, it circles back to the start if there is space from the items that have been removed.
 
+**Illustration**:
+- Queue with size 5, initially empty: [_, _, _, _, _]
+- Operations: Enqueue (add to rear) and Dequeue (remove from front)
+- Adding elements until it’s full: [1, 2, 3, 4, 5]
+- After dequeuing twice, the next enqueue wraps around: [6, 2, 3, 4, 5]
+![image](https://github.com/user-attachments/assets/0df48295-e745-41a1-95ae-02f05fe6c04a)
+![image](https://github.com/user-attachments/assets/ec25db61-f5b3-4d0d-896b-589ceaeb2973)
 
+- Now if u need to add more items, u can do that...
+![image](https://github.com/user-attachments/assets/a8bd6e8a-7309-4571-91a8-ab6e31264da9)
+![image](https://github.com/user-attachments/assets/674d5eee-7d1e-419a-b289-c2f86e699ea7)
 
+---
 
+#### 3. Priority Queue
+- In a **priority queue**, each element has a priority, and elements are dequeued based on their priority rather than their order in the queue. Typically, the element with the highest priority is served first, but variations may use a lower-priority rule.
 
+**Example**:
+- Think of an emergency room where patients with severe injuries are treated first, even if they arrive later than other patients with minor injuries.
 
+**Illustration**:
+- Operations: Insert (with priority) and Remove (highest priority)
+- Adding patients with different priorities: [Patient A (priority 2), Patient B (priority 5), Patient C (priority 1)]
+- Dequeue order: Patient B → Patient A → Patient C
+![image](https://github.com/user-attachments/assets/5194031f-d1fe-4f60-9a21-dd78981326ef)
+![image](https://github.com/user-attachments/assets/27cbbc52-ca05-4ef0-a015-30e2ba790fee)
+- Elements with the highest priority will get out first.
+![image](https://github.com/user-attachments/assets/a5963ae7-efde-444f-ba2d-31badb1a33fc)
 
+---
+#### 4. Double-Ended Queue (Deque)
+- A **double-ended queue**, or **deque**, allows insertion and deletion from both ends. It’s flexible in that it can act as both a stack and a queue.
 
+**Example**:
+- Consider a playlist where you can add or remove songs from either end of the list, allowing flexibility to play the last or the most recently added song.
 
+**Illustration**:
+- Operations: Enqueue at front/rear, Dequeue at front/rear
+- Initially empty deque: []
+- EnqueueFront(1) → [1], EnqueueRear(2) → [1, 2], EnqueueFront(3) → [3, 1, 2]
+- After DequeueFront and DequeueRear, it becomes: [1] 
+![image](https://github.com/user-attachments/assets/14a6f867-d5cf-4674-bd88-4b1634a01ad8)
+![image](https://github.com/user-attachments/assets/aeb202ad-7f93-42c7-b84c-0c7a530c47f8)
 
+---
 
+#### 1. Simple Queue (or Linear Queue) array implementation:
+![image](https://github.com/user-attachments/assets/7983f7da-f7d0-41fd-95e3-978b231f9680)
 
+- Let's dig in deep in the code and its details:
 
+### Code Summary
+This code implements a simple queue with a fixed size using an array, providing basic operations like `enqueue`, `dequeue`, `peek`, and `display`. The queue can hold up to `queueSize` elements and follows First-In-First-Out (FIFO) order.
 
+### Code Explanation
 
+![image](https://github.com/user-attachments/assets/527a4215-7430-49b1-8aed-4ea0722150de)
+- Defines the maximum size of the queue as 5, meaning it can hold up to 5 elements.
+---
 
+![image](https://github.com/user-attachments/assets/a942ff0d-b2b6-4c4b-8380-ee80cd95e0c9)
 
+- `Queue` is an integer array of size `queueSize` which holds the elements of the queue.
+- `Front` points to the front of the queue (index of the first element).
+- `Rear` points to the rear of the queue (index of the last element).
+- Both `Front` and `Rear` are initialized to -1, indicating that the queue is initially empty.
+---
 
+### Functions
 
+### 📌`void enqueue(int value)`
+- Adds an element to the rear of the queue.
+![image](https://github.com/user-attachments/assets/11dd3ec1-7b2b-4f9c-ae2a-9d0f3765fd30)
 
+Explanation:
+- **Condition**: `if(Rear != queueSize - 1)` checks if there’s space left in the queue.
+- **Empty Queue Check**: `if(Front == -1 && Rear == -1)` handles the empty queue case. When adding the first element, both `Front` and `Rear` are incremented from -1 to 0.
+- **Adding the Element**: `Queue[++Rear] = value;` increments `Rear` and then assigns `value` to the next position.
+---
+> ⚠️**Note**: If `Rear` equals `queueSize - 1`, the queue is full, and the function returns without adding an element.
+---
 
+### 📌`void dequeue()`
+- Removes an element from the front of the queue.
+![image](https://github.com/user-attachments/assets/13d74977-1f65-4689-9dd0-3d481fc7af16)
 
+Explanation:
+- **Condition**: `if(Front <= Rear && Front != -1 && Rear != -1)` checks if there are elements in the queue. `Front <= Rear` confirms elements exist between `Front` and `Rear`.
+- **Removing an Element**: `++Front;` shifts `Front` one position to the right, effectively removing the front element from the queue.
+---
+> ⚠️**Note**: If `Front` surpasses `Rear`, the queue is considered empty again.
+---
 
+### 📌`int peek()`
+- Returns the front element without removing it.
+![image](https://github.com/user-attachments/assets/c1f7999e-59dc-4322-84ac-850934a1b137)
 
+Explanation:
+- **Condition**: Similar to `dequeue`, it checks if there are elements in the queue.
+- **Returning the Front Element**: `return Queue[Front];` returns the value at the front without altering the queue.
+- If the queue is empty, `return 0;` indicates no value is available (though typically an error code or exception might be preferred).
+---
 
+### 📌`void display()`
+- Prints all elements in the queue from front to rear.
+![image](https://github.com/user-attachments/assets/ce3d3f62-0ef8-4e8e-bad8-10559274b708)
 
+Explanation:
+- **Condition**: Same check to confirm elements exist in the queue.
+- **Printing Elements**: `for(int i = Front; i <= Rear; ++i)` iterates from `Front` to `Rear`, printing each element with a space separator.
+---
 
+- Based on the provided code, here’s the complete `main` function along with comments and an explanation of the expected output:
+![image](https://github.com/user-attachments/assets/c8ae68a0-cefd-4250-83bf-a0b3c916713b)
 
+### Explanation of Expected Output
 
+1. **After first three `enqueue` calls**:
+   - Output: `5 10 15`
+   
+2. **After first `dequeue` call**:
+   - Output: `10 15`
 
+3. **Peek Output**:
+   - Output: `peek = 10`
 
+4. **After adding three more elements (filling the queue)**:
+   - Output: `10 15 20 25 30`
+
+5. **Attempting to add another element (queue is full)**:
+   - Output: `10 15 20 25 30` (unchanged)
+
+6. **Dequeuing all elements until the queue is empty**:
+   - Final Output: `(no output)`
+
+---
+#### Example Walkthrough
+
+1. **Enqueueing Elements**:
+   - When `enqueue(5)` is called, the queue is empty, so both `Front` and `Rear` become 0, and 5 is added to `Queue[0]`.
+   - Then `enqueue(10)` and `enqueue(15)` add 10 and 15 to `Queue[1]` and `Queue[2]`, respectively.
+
+2. **Displaying Queue**:
+   - After the first three `enqueue` calls, `display()` outputs `5 10 15`.
+
+3. **Dequeuing an Element**:
+   - The first `dequeue()` call removes the front element (5), so `Front` becomes 1.
+   - A subsequent `display()` call then shows `10 15`.
+
+4. **Peeking**:
+   - `peek()` returns the value at the front (10) without modifying the queue.
+
+- This queue implementation is simple and effective for basic operations but lacks features like wrap-around or resizing, which are found in more advanced queue types (like circular queues).
 
 ---
 #### Queue Implementation using Linked List
