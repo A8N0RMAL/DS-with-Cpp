@@ -940,4 +940,34 @@ Explanation:
 9. 📌**K-D Tree (k-dimensional tree)**  
    - A multi-dimensional binary search tree used for organizing points in a k-dimensional space.
    - **Example use case**: Range searching and nearest neighbor search in higher-dimensional spaces (e.g., computer vision, machine learning).
+---
+- Here’s the code for creating a simple binary tree in C++, followed by an explanation of each part.
+![image](https://github.com/user-attachments/assets/aaf0414b-cbe6-46f8-a44d-13803d0b5885)
 
+---
+
+### Explanation
+
+1. **Node Structure Definition**:
+   - The `Node` structure defines the building blocks of a binary tree. Each node has:
+     - `data`: An integer that holds the value of the node.
+     - `left` and `right`: Pointers to the node’s left and right child nodes, respectively. If a node has no child in a particular direction, the pointer is set to `nullptr`.
+
+2. **createNode Function**:
+   - `createNode` is a helper function to simplify node creation.
+   - It allocates memory for a new node, sets the `data` to the given `value`, and initializes `left` and `right` pointers to `nullptr`.
+   - The function then returns a pointer to this new node.
+
+3. **main Function**:
+   - The `main` function constructs a binary tree by linking nodes together.
+   - **Level 1**: The root node is created with a value of `1`.
+   - **Level 2**: Two child nodes are added to the root (values `2` and `3`).
+   - **Level 3**: Additional child nodes (values `4`, `5`, `6`, `7`) are added to the nodes at level 2.
+   - **Level 4**: Further nodes are added, such as `8` and `15`, extending the tree to an additional level.
+   
+4. **Tree Structure**:
+   - This setup builds the following binary tree structure:
+![image](https://github.com/user-attachments/assets/18bfc7b0-1344-4774-9fff-b6d91479b437)
+
+- This code provides a clear example of constructing and linking nodes in a binary tree, with a simple function for creating and initializing each node.
+---
