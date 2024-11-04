@@ -864,3 +864,60 @@ Explanation:
 ![image](https://github.com/user-attachments/assets/c66f8a1e-ffe5-449c-94d9-47f6297cb2e4)
 ---
 
+### Tree
+![image](https://github.com/user-attachments/assets/c73d2e2c-b4b1-4d73-bcca-c8c155770c9b)
+
+- A **tree data structure** is a hierarchical structure that simulates a tree-like model, consisting of **nodes** connected by **edges**. Each tree has a **root node** at the top, and nodes branch down from the root in levels, forming parent-child relationships. Trees are widely used in areas such as computer science and networking due to their hierarchical properties, making them ideal for representing things like file systems, organizational structures, and various computational models.
+
+### Key Concepts of Trees:
+1. **Node**: Each element in a tree.
+2. **Edge**: Connection between two nodes.
+3. **Root**: The topmost node in a tree, which has no parent.
+4. **Child**: A node directly connected below another node.
+5. **Parent**: The node directly above a given node.
+6. **Leaf**: A node with no children.
+7. **Depth**: The length of the path from the root to a node.
+8. **Height**: The length of the longest path from a node to a leaf.
+
+#### Types of Trees:
+1. 📌**Binary Tree**  
+   - Each node has at most two children, commonly referred to as the left and right child.
+   - **Example use case**: Parsing expressions in compilers.
+
+2. 📌**Binary Search Tree (BST)**  
+   - A type of binary tree where the left child of a node contains values less than the node, and the right child contains values greater than the node.
+   - **Example use case**: Efficient searching and sorting (e.g., in databases).
+
+3. 📌**Balanced Trees**  
+   - Trees that are structured to keep their height minimal for efficiency.
+   - Examples include:
+     - **AVL Tree**: A self-balancing binary search tree where the difference between heights of left and right subtrees of any node is at most one.
+     - **Red-Black Tree**: Another self-balancing binary search tree with a set of properties that ensure balancing.
+   - **Example use case**: Often used in memory management and databases for efficient storage and retrieval.
+
+4. 📌**Heap Tree**  
+   - A complete binary tree that follows the **heap property**:
+     - **Max-Heap**: The value of each node is greater than or equal to the values of its children.
+     - **Min-Heap**: The value of each node is less than or equal to the values of its children.
+   - **Example use case**: Implementing priority queues.
+
+5. 📌**B-Tree and B+ Tree**  
+   - Self-balancing search trees commonly used in databases and file systems. They allow nodes to have multiple children, making them more efficient for systems requiring high read and write speeds.
+   - **Example use case**: Databases and file systems for indexed data storage.
+
+6. 📌**Trie (Prefix Tree)**  
+   - A special type of tree used to store associative data structures, where keys are usually strings.
+   - **Example use case**: Autocomplete systems and spell checkers.
+
+7. 📌**Suffix Tree**  
+   - A compressed trie-like structure that represents all suffixes of a given text.
+   - **Example use case**: String matching and bioinformatics.
+
+8. 📌**Segment Tree**  
+   - A binary tree used for storing intervals or segments. It allows querying which of the stored segments contain a certain point.
+   - **Example use case**: Range query problems, like finding minimum or maximum in a range.
+
+9. 📌**K-D Tree (k-dimensional tree)**  
+   - A multi-dimensional binary search tree used for organizing points in a k-dimensional space.
+   - **Example use case**: Range searching and nearest neighbor search in higher-dimensional spaces (e.g., computer vision, machine learning).
+
