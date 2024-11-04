@@ -878,6 +878,26 @@ Explanation:
 6. **Leaf**: A node with no children.
 7. **Depth**: The length of the path from the root to a node.
 8. **Height**: The length of the longest path from a node to a leaf.
+![image](https://github.com/user-attachments/assets/b7c45f16-2916-4be6-9b81-f7300e9fbd65)
+---
+![image](https://github.com/user-attachments/assets/7c083cad-9147-4bad-9ced-05d219232891)
+
+---
+![image](https://github.com/user-attachments/assets/c5ad7950-6393-4aff-933e-bd0e88e7c75a)
+
+---
+![image](https://github.com/user-attachments/assets/2ca27368-b00a-46a6-98b5-d449c41751e0)
+
+---
+![image](https://github.com/user-attachments/assets/aeabbb19-9d56-40d4-8df1-a319430a3a07)
+
+---
+![image](https://github.com/user-attachments/assets/4c17aec6-e8db-49da-a65e-437430b8cc4e)
+
+---
+![image](https://github.com/user-attachments/assets/6961fb27-d737-4f8d-a0c1-952b09187644)
+
+---
 
 #### Types of Trees:
 1. 📌**Binary Tree**  
