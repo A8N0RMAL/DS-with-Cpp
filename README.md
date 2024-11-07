@@ -1,4 +1,4 @@
-In this repo, I'll try to talk about DS using C++
+![Complete binary tree0](https://github.com/user-attachments/assets/ef4d3ead-adff-485f-a8e4-716f096726db)In this repo, I'll try to talk about DS using C++
 ### Course Outlines
 1. Linked list.
 2. Stacks (array-based and linked based implementations).
@@ -970,4 +970,81 @@ Explanation:
 ![image](https://github.com/user-attachments/assets/18bfc7b0-1344-4774-9fff-b6d91479b437)
 
 - This code provides a clear example of constructing and linking nodes in a binary tree, with a simple function for creating and initializing each node.
+---
+
+### 1. 📌**Binary Tree**
+- A **Binary Tree** is a hierarchical data structure in which each node has at most two children, commonly referred to as the left and right children. It’s widely used in various applications like expression parsing, searching, sorting, and as a basis for more advanced data structures.
+
+### Types of Binary Trees
+
+1. **Full (Strictly) Binary Tree**:
+   - Each node has either 0 or 2 children (no node has only one child).
+   - This structure ensures a strict branching pattern.
+   - Example: In a full binary tree of height 2, there would be nodes arranged in a way that each non-leaf node has exactly two children.
+![Full(Strictly) binary tree](https://github.com/user-attachments/assets/7d332322-14c4-4d21-8066-4e40d4ffcb51)
+---
+
+2. **Complete Binary Tree**:
+   - All levels, except possibly the last, are completely filled.
+   - The last level has all nodes as far left as possible.
+   - This structure is essential in implementing efficient binary heaps.
+![Complete binary tree](https://github.com/user-attachments/assets/96270c85-fd4e-4d79-9f0b-24e42dbf6c15)
+![Complete binary tree0](https://github.com/user-attachments/assets/cae7573b-1730-4804-9651-898fb483940a)
+![Complete binary tree1](https://github.com/user-attachments/assets/dd06a19a-b06c-4e05-ad33-e5bb4996d0cf)
+---
+
+3. **Perfect Binary Tree**:
+   - All levels are fully filled, meaning every internal node has two children, and all leaf nodes are at the same depth.
+   - A perfect binary tree with height `h` has `2^(h+1) - 1` nodes.
+   - Example: A binary tree with 3 levels where each level has the maximum possible nodes is a perfect binary tree.
+![Perfect binary tree](https://github.com/user-attachments/assets/96577a60-dea5-41fb-826a-8d65ca75eb68)
+---
+
+4. **Balanced Binary Tree**:
+   - In a balanced binary tree, the difference between the heights of the left and right subtrees of any node is at most one.
+   - Examples include AVL trees and Red-Black trees, which ensure balanced height for optimized search operations.
+![Balanced binary tree](https://github.com/user-attachments/assets/c594b862-d985-4e6e-9221-225b16bacc40)
+![Balanced binary tree0](https://github.com/user-attachments/assets/4fdacb4b-0379-4cb4-b187-1815cd25bdd3)
+![Balanced binary tree1](https://github.com/user-attachments/assets/0777efef-d669-4c50-bf90-731d26a6e80b)
+---
+
+5. **Degenerate (Pathological) Tree**:
+   - Each parent node has only one child, making it resemble a linked list.
+   - This structure results in a skewed tree, either left-skewed or right-skewed, depending on where the single child is attached.
+   - Example: A binary tree where every node has only a right child forms a degenerate tree, leading to linear time complexity for search operations.
+![Degenerate(Pathological) binary tree](https://github.com/user-attachments/assets/11ab2526-c807-4417-82d5-d4c8f02fc8cf)
+---
+
+### Max Number of Nodes at Level and in a Binary Tree
+
+- In a binary tree:
+
+- **Maximum Nodes at Level (L)**: The maximum number of nodes at a given level (L) is given by: **2^L**
+- **Maximum Nodes in a Binary Tree of Height (h)**: The maximum total number of nodes in a binary tree up to height (h) is: **2^(h+1) - 1**
+  
+#### Example:
+For a binary tree with height ( h = 3 ):
+- Max nodes at each level:
+  - Level 0: ( 2^0 = 1 )
+  - Level 1: ( 2^1 = 2 )
+  - Level 2: ( 2^2 = 4 )
+  - Level 3: ( 2^3 = 8 )
+- Total maximum nodes in the tree: ( 2^(3+1) - 1 = 15 )
+- This formula is useful for calculating the full capacity of a binary tree based on its height.
+![Max no  of nodes at level L   in a binary tree](https://github.com/user-attachments/assets/f1559e60-f539-445f-bc49-4f8cfe5026ac)
+---
+
+### Finding the Height of a Binary Tree
+
+- For a binary tree with (n) nodes:
+
+1. **Formula to Calculate Height (h)**: **n = 2^(h+1) - 1**
+   - Rearranging this equation to solve for (h): **h = log_2(n + 1) - 1**
+
+2. **Example Calculation**:
+   - For ( n = 15 ) nodes: **h = log_2(15 + 1) - 1**
+   - This calculation gives the height of the tree based on the total number of nodes.
+
+- This formula is helpful for determining the height of a complete binary tree when only the node count is known.
+![Find height of a binary tree](https://github.com/user-attachments/assets/df42cfe4-e971-44ad-bad7-deeef03ee2ac)
 ---
