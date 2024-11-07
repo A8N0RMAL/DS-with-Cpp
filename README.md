@@ -1,4 +1,4 @@
-![Complete binary tree0](https://github.com/user-attachments/assets/ef4d3ead-adff-485f-a8e4-716f096726db)In this repo, I'll try to talk about DS using C++
+In this repo, I'll try to talk about DS using C++
 ### Course Outlines
 1. Linked list.
 2. Stacks (array-based and linked based implementations).
@@ -1019,8 +1019,8 @@ Explanation:
 
 - In a binary tree:
 
-- **Maximum Nodes at Level (L)**: The maximum number of nodes at a given level (L) is given by: **2^L**
-- **Maximum Nodes in a Binary Tree of Height (h)**: The maximum total number of nodes in a binary tree up to height (h) is: **2^(h+1) - 1**
+- **Maximum Nodes at Level (L)**: The maximum number of nodes at a given level (L) is given by: `2^L`
+- **Maximum Nodes in a Binary Tree of Height (h)**: The maximum total number of nodes in a binary tree up to height (h) is: `2^(h+1) - 1`
   
 #### Example:
 For a binary tree with height ( h = 3 ):
@@ -1038,11 +1038,11 @@ For a binary tree with height ( h = 3 ):
 
 - For a binary tree with (n) nodes:
 
-1. **Formula to Calculate Height (h)**: **n = 2^(h+1) - 1**
+1. **Formula to Calculate Height (h)**: `n = 2^(h+1) - 1`
    - Rearranging this equation to solve for (h): **h = log_2(n + 1) - 1**
 
 2. **Example Calculation**:
-   - For ( n = 15 ) nodes: **h = log_2(15 + 1) - 1**
+   - For ( n = 15 ) nodes: `h = log_2(15 + 1) - 1`
    - This calculation gives the height of the tree based on the total number of nodes.
 
 - This formula is helpful for determining the height of a complete binary tree when only the node count is known.
