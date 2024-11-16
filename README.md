@@ -1047,4 +1047,100 @@ For a binary tree with height ( h = 3 ):
 
 - This formula is helpful for determining the height of a complete binary tree when only the node count is known.
 ![Find height of a binary tree](https://github.com/user-attachments/assets/df42cfe4-e971-44ad-bad7-deeef03ee2ac)
+
 ---
+### Binary Tree Traversal(Pre-In-Post-Level Order) With Implementation
+![image](https://github.com/user-attachments/assets/161c0d16-76ae-4453-a42f-daf2b15e724e)
+
+---
+### **1. Pre-order Traversal**
+![image](https://github.com/user-attachments/assets/413d064f-6720-4563-8c17-15f3e184c51a)
+- **Definition**: Visit the **root node first**, then recursively traverse the left subtree, followed by the right subtree.
+- **Order**: `Root -> Left -> Right`
+- **Example**:
+  Given the tree:
+  ```
+        A
+       / \
+      B   E
+     / \    \
+    C   D    F
+  ```
+  Pre-order traversal: `A -> B -> C -> D -> E -> F`
+
+#### Pre-order Traversal (C++)
+![image](https://github.com/user-attachments/assets/555cc156-0717-474d-a2cd-bf5b291e3541)
+
+---
+
+### **2. In-order Traversal**
+![image](https://github.com/user-attachments/assets/51d8ac3a-2fe1-4d50-a21b-2938bcdb37a9)
+- **Definition**: Traverse the left subtree first, then visit the **root node**, and finally traverse the right subtree.
+- **Order**: `Left -> Root -> Right`
+- **Example**:
+  Given the tree:
+  ```
+        A
+       / \
+      B   E
+     / \    \
+    C   D    F
+  ```
+  In-order traversal: `C -> B -> D -> A -> E -> F`
+#### In-order Traversal (C++)
+![image](https://github.com/user-attachments/assets/ed28beb6-9555-446a-8b20-ace6bb2e5749)
+
+---
+
+### **3. Post-order Traversal**
+![image](https://github.com/user-attachments/assets/740822e0-a271-4d22-a888-1db715735529)
+- **Definition**: Traverse the left subtree, then the right subtree, and finally visit the **root node**.
+- **Order**: `Left -> Right -> Root`
+- **Example**:
+  Given the tree:
+  ```
+        A
+       / \
+      B   E
+     / \    \
+    C   D    F
+  ```
+  Post-order traversal: `C -> D -> B -> F -> E -> A`
+#### Post-order Traversal (C++)
+![image](https://github.com/user-attachments/assets/c9a365b9-f1a6-4754-8720-e6b45f65f546)
+
+---
+
+### **4. Level-order Traversal (Breadth-first traversal)**
+![image](https://github.com/user-attachments/assets/b6c3f840-9c6a-4678-9496-a11d1c965d45)
+- **Definition**: Visit all nodes of the binary tree level by level, starting from the root.
+- **Order**: `Level by Level`
+- **Example**:
+  Given the tree:
+  ```
+        A
+       / \
+      F   G
+     / \   \
+    X   V   Y
+   /       / \
+  M       H   B
+  ```
+  Level-order traversal: `A -> F -> G -> X -> V -> Y -> M -> H -> B`
+#### Level-order Traversal (C++)
+![image](https://github.com/user-attachments/assets/3fbd3e39-4cf0-431b-abfe-583622ae8ecf)
+
+---
+
+### **Comparison of Traversals**:
+
+| **Traversal**     | **Order**               | **Example Output** |
+|--------------------|-------------------------|---------------------|
+| **Pre-order**      | `Root -> Left -> Right` | `A -> B -> C -> D -> E -> F` |
+| **In-order**       | `Left -> Root -> Right` | `C -> B -> D -> A -> E -> F` |
+| **Post-order**     | `Left -> Right -> Root` | `C -> D -> B -> F -> E -> A` |
+| **Level-order**    | `Level by Level`        | `A -> F -> G -> X -> V -> Y -> M -> H -> B` |
+
+---
+
+
