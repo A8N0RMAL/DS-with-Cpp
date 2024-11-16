@@ -1053,7 +1053,7 @@ For a binary tree with height ( h = 3 ):
 ![image](https://github.com/user-attachments/assets/161c0d16-76ae-4453-a42f-daf2b15e724e)
 
 ---
-### **1. Pre-order Traversal**
+### **1. 📌Pre-order Traversal**
 ![image](https://github.com/user-attachments/assets/413d064f-6720-4563-8c17-15f3e184c51a)
 - **Definition**: Visit the **root node first**, then recursively traverse the left subtree, followed by the right subtree.
 - **Order**: `Root -> Left -> Right`
@@ -1073,7 +1073,7 @@ For a binary tree with height ( h = 3 ):
 
 ---
 
-### **2. In-order Traversal**
+### **2. 📌In-order Traversal**
 ![image](https://github.com/user-attachments/assets/51d8ac3a-2fe1-4d50-a21b-2938bcdb37a9)
 - **Definition**: Traverse the left subtree first, then visit the **root node**, and finally traverse the right subtree.
 - **Order**: `Left -> Root -> Right`
@@ -1092,7 +1092,7 @@ For a binary tree with height ( h = 3 ):
 
 ---
 
-### **3. Post-order Traversal**
+### **3. 📌Post-order Traversal**
 ![image](https://github.com/user-attachments/assets/740822e0-a271-4d22-a888-1db715735529)
 - **Definition**: Traverse the left subtree, then the right subtree, and finally visit the **root node**.
 - **Order**: `Left -> Right -> Root`
@@ -1111,7 +1111,7 @@ For a binary tree with height ( h = 3 ):
 
 ---
 
-### **4. Level-order Traversal (Breadth-first traversal)**
+### **4. 📌Level-order Traversal (Breadth-first traversal)**
 ![image](https://github.com/user-attachments/assets/b6c3f840-9c6a-4678-9496-a11d1c965d45)
 - **Definition**: Visit all nodes of the binary tree level by level, starting from the root.
 - **Order**: `Level by Level`
