@@ -1131,6 +1131,22 @@ For a binary tree with height ( h = 3 ):
 ![image](https://github.com/user-attachments/assets/3fbd3e39-4cf0-431b-abfe-583622ae8ecf)
 
 ---
+### Example Output for the Sample Tree:
+
+```
+        1
+       / \
+      2   3
+     / \
+    4   5
+```
+
+- **Pre-order**: `1 2 4 5 3`
+- **In-order**: `4 2 5 1 3`
+- **Post-order**: `4 5 2 3 1`
+- **Level-order**: `1 2 3 4 5`
+
+---
 
 ### **Comparison of Traversals**:
 
