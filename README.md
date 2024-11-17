@@ -1,4 +1,4 @@
-In this repo, I'll try to talk about DS using C++
+![Screenshot (49)](https://github.com/user-attachments/assets/57d13cd8-f197-43b7-847e-fb11ff7ec44f)In this repo, I'll try to talk about DS using C++
 ### Course Outlines
 1. Linked list.
 2. Stacks (array-based and linked based implementations).
@@ -1159,4 +1159,149 @@ For a binary tree with height ( h = 3 ):
 
 ---
 
+### **Binary Search Tree (BST) Overview**
+A **Binary Search Tree** is a tree data structure where:
+1. Each node has at most two children (left and right).
+2. For each node:
+   - The left subtree contains values less than the node's key.
+   - The right subtree contains values greater than the node's key.
+
+#### **Key Operations in BST**
+1. **Insert**: Add a new value to the BST.
+2. **Search**: Find if a value exists in the BST.
+3. **Delete**: Remove a value from the BST.
+4. **Find Successor**: Locate the next larger value in the BST.
+5. **Find Predecessor**: Locate the next smaller value in the BST.
+6. **Find Max/Min**: Locate the largest or smallest value in the BST.
+
+---
+
+### 📌**1. Insert Operation**
+- Start at the root.
+- Compare the value to the current node:
+  - If smaller, move to the left subtree.
+  - If larger, move to the right subtree.
+- Repeat until an empty position is found and insert the value.
+
+#### **Example**
+Insert `16` and `21` into this BST:
+```
+Before:               After:
+      25                     25
+     /  \                   /  \
+   20    30      →       20    30
+  /  \   /  \           /  \   /  \
+15   22 27  35        15   22 27  35
+```
+
+Time Complexity: **O(log n)** (balanced tree) or **O(n)** (skewed tree).
+![Screenshot (36)](https://github.com/user-attachments/assets/d579bc08-c3f0-465a-b1db-acb2d1dd26eb)
+![Screenshot (37)](https://github.com/user-attachments/assets/3ba3b148-df63-4c98-836d-193ccbdcac9d)
+
+### Code (Insert Operation):
+![image](https://github.com/user-attachments/assets/6a560342-3495-46fe-a62d-3f892047f278)
+
+---
+
+### 📌**2. Search Operation**
+- Start at the root.
+- Compare the target value with the current node:
+  - If equal, value is found.
+  - If smaller, search in the left subtree.
+  - If larger, search in the right subtree.
+
+#### **Example**
+Search for `40`:
+```
+BST: 
+      25
+     /  \
+   20    30
+  /  \   /  \
+15   22 27  35
+
+Path: 25 → 30 → 35 → 40 (not found)
+```
+
+Time Complexity: Same as Insert.
+![Screenshot (39)](https://github.com/user-attachments/assets/d2edce51-6ddb-47d9-ad9c-3966e607fef4)
+
+### Code (Search Operation):
+![image](https://github.com/user-attachments/assets/3693045f-3c76-4358-97d4-10c772f34c1b)
+
+---
+
+### 📌**3. Delete Operation**
+- Locate the value to be deleted.
+- Handle three cases:
+  1. **Node has no children**: Simply remove it.
+  2. **Node has one child**: Replace the node with its child.
+  3. **Node has two children**:
+     - Find the **successor** (minimum in the right subtree).
+     - Replace the node's value with the successor.
+     - Delete the successor.
+
+#### **Example**
+Delete `10`:
+```
+Before:               After:
+      25                     25
+     /  \                   /  \
+   20    30      →       20    30
+  /  \   /  \           /  \   /  \
+10   22 27  35        15   22 27  35
+```
+![Screenshot (41)](https://github.com/user-attachments/assets/311c9611-6dab-465d-9f50-000206fb7114)
+![Screenshot (42)](https://github.com/user-attachments/assets/4361137b-09f4-4b24-99ad-b9151173cdd8)
+![Screenshot (43)](https://github.com/user-attachments/assets/5491d6be-d4e7-432c-9273-9775af0bc122)
+![Screenshot (44)](https://github.com/user-attachments/assets/1e24bb80-b024-4eaa-98c1-9eca3a8911d5)
+![Screenshot (45)](https://github.com/user-attachments/assets/e5b9c320-df79-43f6-913e-d7299844a870)
+
+### Code (Delete Operation):
+![image](https://github.com/user-attachments/assets/96e143ca-edd1-4d00-82eb-c32e5f99adf8)
+
+---
+
+### 📌**4. Successor and Predecessor**
+- **Successor**: Next larger value in the BST.
+  - If the node has a right child, find the minimum in the right subtree.
+  - Otherwise, go up until the node is a left child.
+  
+- **Predecessor**: Next smaller value in the BST.
+  - If the node has a left child, find the maximum in the left subtree.
+  - Otherwise, go up until the node is a right child.
+
+#### **Example**
+For node `20`:
+- Successor: `22`
+- Predecessor: `15`
+![Screenshot (49)](https://github.com/user-attachments/assets/da5d154a-b886-4093-9257-50bcfb98f2c3)
+![Screenshot (50)](https://github.com/user-attachments/assets/95c741dd-4fcb-46e4-bd9b-196560f5d23d)
+
+### Code (Successor and Predecessor):
+![image](https://github.com/user-attachments/assets/4776b78c-daeb-4423-a9aa-6451a21f71da)
+
+---
+
+### 📌**5. Find Maximum and Minimum**
+- **Maximum**: Keep moving to the right until the last node.
+- **Minimum**: Keep moving to the left until the last node.
+
+#### **Example**
+Find Min and Max in this BST:
+```
+      25
+     /  \
+   20    30
+  /  \
+15   22
+
+Min: `15`
+Max: `30`
+```
+
+### Code (Find Maximum and Minimum):
+![image](https://github.com/user-attachments/assets/490a94e9-035b-458d-b1e2-043216800be1)
+
+---
 
