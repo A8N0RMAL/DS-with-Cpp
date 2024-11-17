@@ -1,4 +1,4 @@
-![Screenshot (49)](https://github.com/user-attachments/assets/57d13cd8-f197-43b7-847e-fb11ff7ec44f)In this repo, I'll try to talk about DS using C++
+In this repo, I'll try to talk about DS using C++
 ### Course Outlines
 1. Linked list.
 2. Stacks (array-based and linked based implementations).
