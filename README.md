@@ -1305,3 +1305,101 @@ Max: `30`
 
 ---
 
+Here’s how you can organize your GitHub repository section on **AVL Trees** under Data Structures, along with code and examples:
+
+---
+
+### **AVL Trees: Height-Balanced Binary Search Tree**
+AVL (Adelson-Velsky and Landis) Trees are self-balancing Binary Search Trees (BST). They maintain a **balance factor** of each node, ensuring the height difference between the left and right subtrees is at most **1**. This guarantees O(log n) time complexity for insertion, deletion, and search operations.
+
+#### **Key Concepts**:
+1. **Balance Factor**:  
+   **Balance Factor** = `Height of Left Subtree` - `Height of Right Subtree`
+   - If the balance factor is **-1, 0, or 1**, the tree is balanced.
+   - If it exceeds this range, rotations are performed to restore balance.
+
+2. **Rotations**:  
+   Rotations are used to balance the tree after insertion or deletion:
+   - **LL (Left-Left)**: Imbalance in the left subtree of the left child.
+   - **RR (Right-Right)**: Imbalance in the right subtree of the right child.
+   - **LR (Left-Right)**: Imbalance in the right subtree of the left child.
+   - **RL (Right-Left)**: Imbalance in the left subtree of the right child.
+
+---
+
+#### **AVL Tree Insertion**:
+- Insert the new node as in a regular BST.
+- Update the balance factor of nodes.
+- Perform rotations (LL, RR, LR, RL) if needed.
+
+📌**C++ Code for AVL Tree Insertion**:
+![image](https://github.com/user-attachments/assets/6a745326-780c-40b9-b515-5bd878148c6c)
+
+
+---
+
+### **Rotations**:
+#### 📌1. **LL (Left-Left)**:
+Occurs when a node is inserted into the left subtree of the left child.  
+**Example**:
+```
+Insert 30, 20, 10
+Initial Tree:      30
+                  /
+                 20
+                /
+               10
+After LL Rotation:
+                  20
+                 /  \
+               10    30
+```
+---
+#### 📌2. **RR (Right-Right)**:
+Occurs when a node is inserted into the right subtree of the right child.  
+**Example**:
+```
+Insert 10, 20, 30
+Initial Tree:      10
+                    \
+                     20
+                       \
+                        30
+After RR Rotation:
+                  20
+                 /  \
+               10    30
+```
+---
+#### 📌3. **LR (Left-Right)**:
+Occurs when a node is inserted into the right subtree of the left child.  
+**Example**:
+```
+Insert 30, 10, 20
+Initial Tree:      30
+                  /
+                10
+                  \
+                   20
+After LR Rotation:
+                  20
+                 /  \
+               10    30
+```
+---
+#### 📌4. **RL (Right-Left)**:
+Occurs when a node is inserted into the left subtree of the right child.  
+**Example**:
+```
+Insert 10, 30, 20
+Initial Tree:      10
+                    \
+                     30
+                    /
+                   20
+After RL Rotation:
+                  20
+                 /  \
+               10    30
+```
+---
