@@ -1403,3 +1403,97 @@ After RL Rotation:
                10    30
 ```
 ---
+
+## Huffman Coding Algorithm
+
+Huffman Coding is a lossless data compression algorithm that assigns variable-length binary codes to characters based on their frequencies. Characters that occur more frequently are assigned shorter codes, while less frequent characters are assigned longer codes.
+
+## How Huffman Coding Works
+
+### Example Problem
+Consider the message:  
+`BCCADBBADDBCCADDDCCE`
+
+- **Character Frequencies**:
+  | Character | Frequency |
+  |-----------|-----------|
+  | A         | 3         |
+  | B         | 5         |
+  | C         | 6         |
+  | D         | 4         |
+  | E         | 2         |
+
+- **Goal**: Minimize the total number of bits used to encode this message.
+
+### Steps:
+1. **Build a Frequency Table**: Count the occurrences of each character.
+2. **Construct a Huffman Tree**:
+   - Treat each character as a leaf node.
+   - Merge the two nodes with the smallest frequencies to create a new node.
+   - Repeat until a single tree is formed.
+3. **Assign Codes**:
+   - Traverse the tree to assign binary codes (0 for left, 1 for right).
+4. **Encode the Message**:
+   - Replace each character with its corresponding binary code.
+5. **Compute Compression**:
+   - Calculate the total number of bits used and compare with the uncompressed message size.
+
+### Visual Representation
+- **Huffman Tree**:  
+  The root node contains the sum of all frequencies, and leaf nodes represent individual characters.
+- **Binary Codes**:
+  | Character | Code | Frequency | Bits Used |
+  |-----------|------|-----------|-----------|
+  | A         | 001  | 3         | 9         |
+  | B         | 10   | 5         | 10        |
+  | C         | 11   | 6         | 12        |
+  | D         | 01   | 4         | 8         |
+  | E         | 000  | 2         | 6         |
+
+  Total bits = 45
+![Screenshot (51)](https://github.com/user-attachments/assets/2529513d-6ab5-41f3-ae5c-f231fd98d518)
+
+---
+
+## 📌Implementation in C++
+
+Below is the C++ implementation of Huffman Coding:
+![image](https://github.com/user-attachments/assets/3cb1c09d-9ab1-4cd3-8a9d-3b9946e4af5c)
+
+
+---
+
+## Explanation of Code
+1. **Node Structure**: Represents each character or internal node in the Huffman Tree.
+2. **Priority Queue**: Ensures that nodes with smaller frequencies are merged first.
+3. **Tree Construction**: Combines nodes to build the Huffman Tree.
+4. **Code Generation**: Recursively traverses the tree to assign binary codes.
+5. **Encoding**: Maps each character to its binary code and encodes the input message.
+
+---
+
+## Example Output
+
+### Input:  
+`BCCADBBADDBCCADDDCCE`
+
+### Huffman Codes:
+```
+A: 001
+B: 10
+C: 11
+D: 01
+E: 000
+```
+
+### Encoded Text:
+```
+101110001101001101011101100100010011
+```
+
+### Compression:
+- Original size = 20 characters × 8 bits = 160 bits
+- Compressed size = 45 bits
+- **Compression Ratio** = (45 / 160) × 100 ≈ 28.13%
+
+---
