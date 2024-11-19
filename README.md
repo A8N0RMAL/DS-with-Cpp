@@ -1455,7 +1455,7 @@ Consider the message:
 
 ---
 
-## 📌Implementation in C++
+## Implementation in C++
 
 Below is the C++ implementation of Huffman Coding:
 ![image](https://github.com/user-attachments/assets/3cb1c09d-9ab1-4cd3-8a9d-3b9946e4af5c)
@@ -1514,7 +1514,7 @@ E: 000
 
 ---
 
-## 📌Explanation of Code
+## Explanation of Code
 
 ### `selectionSort` Function:
 - **Purpose**: Implements the selection sort logic.
@@ -1535,7 +1535,7 @@ E: 000
 
 ---
 
-## 📌Example Walkthrough
+## Example Walkthrough
 
 ### Input:
 ```
@@ -1569,7 +1569,7 @@ Sorted array:
 
 ---
 
-## 📌Time Complexity
+## Time Complexity
 
 1. **Best, Average, and Worst Case**: `O(n^2)`
    - Two nested loops are used to find and place the minimum element.
@@ -1582,5 +1582,95 @@ Sorted array:
 
 - Selection Sort is inefficient for large datasets due to its `O(n^2)` complexity.
 - It is a comparison-based algorithm that performs well for small datasets or when memory is limited.
+
+---
+
+## 📌Bubble Sort Algorithm  
+Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. This process continues until the list is sorted. It gets its name because smaller elements "bubble" to the top of the list.
+
+### Key Characteristics
+- **Best Case Time Complexity**: \(O(n)\) (when the array is already sorted).
+- **Worst Case Time Complexity**: \(O(n^2)\) (when the array is reverse sorted).
+- **Space Complexity**: \(O(1)\) (in-place sorting).
+
+---
+
+### Algorithm Steps
+1. Start at the beginning of the list.
+2. Compare each pair of adjacent elements.
+3. Swap them if they are in the wrong order.
+4. Repeat for all elements, reducing the range by one each time.
+5. Stop when no swaps are needed.
+
+---
+
+### 🚀C++ Code Implementation
+![image](https://github.com/user-attachments/assets/a0867807-d05e-4add-942b-904b44bf2a80)
+
+
+---
+
+### Explanation of the Code
+1. **`bubbleSort` Function**  
+   - **Input**: A reference to a vector `arr` of integers.  
+   - **Logic**:  
+     - Outer loop runs \(n-1\) times, ensuring all elements are checked.  
+     - Inner loop compares adjacent elements and swaps them if they are out of order.  
+     - A `swapped` flag is used to optimize performance, stopping the algorithm if the array is already sorted.  
+   - **Complexity**: Nested loops make the time complexity \(O(n^2)\) in the worst case.  
+
+2. **`printArray` Function**  
+   - **Input**: A constant reference to a vector `arr` of integers.  
+   - **Purpose**: Displays the elements of the array.  
+
+3. **`main` Function**  
+   - Initializes an unsorted array.  
+   - Calls `printArray` to display the original array.  
+   - Sorts the array using `bubbleSort`.  
+   - Displays the sorted array.
+
+---
+
+### Example Input and Output
+
+**Input:**  
+```plaintext
+Original Array: 64 34 25 12 22 11 90
+```
+
+**Output:**  
+```plaintext
+Sorted Array: 11 12 22 25 34 64 90
+```
+
+---
+
+### Visual Representation of Bubble Sort
+
+1. **Initial Array:**  
+   `64, 34, 25, 12, 22, 11, 90`  
+
+2. **Pass 1:**  
+   Swaps happen: `34, 25, 12, 22, 11, 64, 90`  
+
+3. **Pass 2:**  
+   More swaps: `25, 12, 22, 11, 34, 64, 90`  
+
+4. **Pass 3:**  
+   `12, 22, 11, 25, 34, 64, 90`  
+
+5. **Pass 4:**  
+   `11, 12, 22, 25, 34, 64, 90`  
+
+6. **Sorted Array:**  
+   `11, 12, 22, 25, 34, 64, 90`
+
+---
+
+### Edge Cases to Test
+1. **Empty Array:** Should remain unchanged.  
+2. **Single Element:** Already sorted.  
+3. **Already Sorted Array:** No swaps needed.  
+4. **Reverse Sorted Array:** Worst-case scenario.
 
 ---
