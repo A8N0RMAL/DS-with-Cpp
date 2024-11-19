@@ -1497,3 +1497,90 @@ E: 000
 - **Compression Ratio** = (45 / 160) × 100 ≈ 28.13%
 
 ---
+
+## 📌Selection Sort
+
+### Steps of the Algorithm
+1. Start with the first element and consider it as the minimum.
+2. Compare this element with all other elements in the unsorted portion.
+3. Swap it with the smallest element in the unsorted portion.
+4. Move the boundary of the sorted portion one step forward.
+5. Repeat until the entire array is sorted.
+
+---
+
+## 🚀C++ Implementation
+![image](https://github.com/user-attachments/assets/33209ab0-e54f-4929-a10a-05bac764b689)
+
+---
+
+## 📌Explanation of Code
+
+### `selectionSort` Function:
+- **Purpose**: Implements the selection sort logic.
+- **Parameters**: Takes an array `arr[]` and its size `n` as input.
+- **Steps**:
+  - A loop iterates over the unsorted portion of the array.
+  - Inside this loop, another loop identifies the smallest element in the unsorted portion.
+  - The `swap` function exchanges the smallest element with the first unsorted element.
+
+### `printArray` Function:
+- **Purpose**: Prints the array elements.
+- **Parameters**: Takes the array `arr[]` and its size `n`.
+
+### `main` Function:
+- Initializes the array to be sorted.
+- Calls the `selectionSort` function to sort the array.
+- Prints the array before and after sorting.
+
+---
+
+## 📌Example Walkthrough
+
+### Input:
+```
+64 34 25 12 22 11 90
+```
+
+### Sorting Steps:
+1. Find the smallest element (`11`) and swap with the first element:
+   ```
+   11 34 25 12 22 64 90
+   ```
+
+2. Find the next smallest (`12`) and swap with the second element:
+   ```
+   11 12 25 34 22 64 90
+   ```
+
+3. Repeat until sorted:
+   ```
+   11 12 22 25 34 64 90
+   ```
+
+### Output:
+```
+Original array:
+64 34 25 12 22 11 90
+
+Sorted array:
+11 12 22 25 34 64 90
+```
+
+---
+
+## 📌Time Complexity
+
+1. **Best, Average, and Worst Case**: `O(n^2)`
+   - Two nested loops are used to find and place the minimum element.
+2. **Space Complexity**: `O(1)`
+   - No additional data structures are used.
+
+---
+
+## Key Points
+
+- Selection Sort is inefficient for large datasets due to its `O(n^2)` complexity.
+- It is a comparison-based algorithm that performs well for small datasets or when memory is limited.
+
+---
