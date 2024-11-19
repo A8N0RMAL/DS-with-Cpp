@@ -1674,3 +1674,65 @@ Sorted Array: 11 12 22 25 34 64 90
 4. **Reverse Sorted Array:** Worst-case scenario.
 
 ---
+
+### 📌Insertion Sort Algorithm
+
+#### **Overview**
+Insertion Sort is a simple and intuitive sorting algorithm that builds the sorted array one item at a time. It is much like the way people often sort playing cards in their hands. 
+
+#### **Algorithm Steps**
+1. Start with the second element (index 1) and consider it as the key.
+2. Compare the key with elements in the sorted portion to its left.
+3. Shift all elements greater than the key to the right.
+4. Insert the key into its correct position.
+5. Repeat for all elements in the array.
+
+---
+
+### 🚀**C++ Implementation**
+![image](https://github.com/user-attachments/assets/d2989185-e0b5-4892-ae3d-bc1ce8072e40)
+
+---
+
+### **Code Explanation**
+1. **Input:** 
+   - A vector `arr` is used to hold the list of integers to be sorted.
+   
+2. **Key Variable:**
+   - `key` is used to temporarily store the value being inserted into the sorted portion.
+
+3. **Inner Loop:**
+   - Moves elements greater than `key` to the right to make space for `key`.
+
+4. **Insertion:**
+   - `key` is placed in the correct position using `arr[j + 1] = key`.
+
+5. **Printing Steps:**
+   - Each iteration of the outer loop shows the progress of the sort.
+
+6. **Output:**
+   - Displays the original, intermediate, and final sorted arrays.
+
+---
+
+### **Example Execution**
+
+#### Input:
+```
+arr = {12, 11, 13, 5, 6}
+```
+
+#### Output:
+```
+Original array: 12 11 13 5 6 
+
+Performing Insertion Sort...
+Step 1: 11 12 13 5 6 
+Step 2: 11 12 13 5 6 
+Step 3: 5 11 12 13 6 
+Step 4: 5 6 11 12 13 
+
+Sorted array: 5 6 11 12 13
+```
+
+---
