@@ -1675,7 +1675,7 @@ Sorted Array: 11 12 22 25 34 64 90
 
 ---
 
-### 📌Insertion Sort Algorithm
+## 📌Insertion Sort Algorithm
 
 #### **Overview**
 Insertion Sort is a simple and intuitive sorting algorithm that builds the sorted array one item at a time. It is much like the way people often sort playing cards in their hands. 
@@ -1734,5 +1734,247 @@ Step 4: 5 6 11 12 13
 
 Sorted array: 5 6 11 12 13
 ```
+
+---
+
+## 📌Merge Sort Algorithm
+
+**Merge Sort** is a sorting algorithm that:
+1. **Divides** the input array into two halves recursively.
+2. **Sorts** each half individually.
+3. **Merges** the two sorted halves into one sorted array.
+
+Merge Sort guarantees a time complexity of **O(n log n)** and is a stable sorting algorithm.
+
+---
+
+## Algorithm Explanation
+
+### Step-by-Step Process:
+1. **Divide the Array**:
+   - Split the array into two halves recursively until each subarray contains a single element.
+
+2. **Merge**:
+   - Compare elements from both subarrays and merge them into a sorted array.
+
+---
+
+### 🚀C++ Implementation
+![image](https://github.com/user-attachments/assets/85bae5b3-f637-4fec-b34a-9fbff52bb94e)
+
+---
+
+## Function Explanations
+
+### 1. `_merge` Function:
+- **Purpose**: Merges two sorted subarrays (`arr[l..m]` and `arr[m+1..r]`) into one sorted array.
+- **Key Steps**:
+  1. Create two temporary arrays `L` and `R` to store elements of the left and right subarrays.
+  2. Merge elements back into the original array `arr[l..r]` in sorted order.
+
+### 2. `mergeSort` Function:
+- **Purpose**: Recursively divides the array into halves and sorts them.
+- **Key Steps**:
+  1. Calculate the middle point of the array.
+  2. Call `mergeSort` on the left half.
+  3. Call `mergeSort` on the right half.
+  4. Merge the sorted halves using `_merge`.
+
+### 3. `print` Function:
+- **Purpose**: Utility function to print the array.
+
+---
+
+## Example
+
+### Input:
+```cpp
+int arr[] = {60, 10, 20, 5, 60, 70};
+```
+
+### Output:
+```
+Original Array: 60 10 20 5 60 70 
+Sorted Array: 5 10 20 60 60 70 
+```
+---
+
+### Example Input Array:
+```cpp
+int arr[] = {60, 10, 20, 5, 60, 70};
+```
+### Initial Call:
+```cpp
+mergeSort(arr, 0, 5);  // Array indices: 0 to 5
+```
+---
+
+### Tracing the Recursion Step-by-Step:
+
+#### Step 1: Initial Call (`mergeSort(arr, 0, 5)`)
+1. Calculate `m = 0 + (5 - 0) / 2 = 2`.
+2. Divide into two halves:
+   - Left half: `mergeSort(arr, 0, 2)` (indices `0 to 2`).
+   - Right half: `mergeSort(arr, 3, 5)` (indices `3 to 5`).
+
+---
+
+#### Step 2: Left Half (`mergeSort(arr, 0, 2)`)
+1. Calculate `m = 0 + (2 - 0) / 2 = 1`.
+2. Divide into two halves:
+   - Left half: `mergeSort(arr, 0, 1)` (indices `0 to 1`).
+   - Right half: `mergeSort(arr, 2, 2)` (index `2`).
+
+---
+
+#### Step 3: Left Sub-Half (`mergeSort(arr, 0, 1)`)
+1. Calculate `m = 0 + (1 - 0) / 2 = 0`.
+2. Divide into two halves:
+   - Left half: `mergeSort(arr, 0, 0)` (index `0`).
+   - Right half: `mergeSort(arr, 1, 1)` (index `1`).
+
+---
+
+#### Step 4: Base Case Reached
+For both `mergeSort(arr, 0, 0)` and `mergeSort(arr, 1, 1)`:
+- `l == r`, so the function returns without further recursion.
+
+---
+
+#### Step 5: Merge (`_merge(arr, 0, 0, 1)`)
+After the base case is reached, the `_merge` function is called to merge the subarrays:
+- Left subarray: `[60]` (index `0`).
+- Right subarray: `[10]` (index `1`).
+- Merged result: `[10, 60]`.
+
+The array now looks like this:
+```cpp
+arr = {10, 60, 20, 5, 60, 70};
+```
+
+---
+
+#### Step 6: Right Sub-Half (`mergeSort(arr, 2, 2)`)
+- `l == r`, so the function returns (single element is already sorted).
+
+---
+
+#### Step 7: Merge (`_merge(arr, 0, 1, 2)`)
+Merge the subarrays:
+- Left subarray: `[10, 60]` (indices `0 to 1`).
+- Right subarray: `[20]` (index `2`).
+- Merged result: `[10, 20, 60]`.
+
+The array now looks like this:
+```cpp
+arr = {10, 20, 60, 5, 60, 70};
+```
+
+---
+
+#### Step 8: Right Half (`mergeSort(arr, 3, 5)`)
+1. Calculate `m = 3 + (5 - 3) / 2 = 4`.
+2. Divide into two halves:
+   - Left half: `mergeSort(arr, 3, 4)` (indices `3 to 4`).
+   - Right half: `mergeSort(arr, 5, 5)` (index `5`).
+
+---
+
+#### Step 9: Left Sub-Half (`mergeSort(arr, 3, 4)`)
+1. Calculate `m = 3 + (4 - 3) / 2 = 3`.
+2. Divide into two halves:
+   - Left half: `mergeSort(arr, 3, 3)` (index `3`).
+   - Right half: `mergeSort(arr, 4, 4)` (index `4`).
+
+For both `mergeSort(arr, 3, 3)` and `mergeSort(arr, 4, 4)`:
+- `l == r`, so the function returns.
+
+---
+
+#### Step 10: Merge (`_merge(arr, 3, 3, 4)`)
+Merge the subarrays:
+- Left subarray: `[5]` (index `3`).
+- Right subarray: `[60]` (index `4`).
+- Merged result: `[5, 60]`.
+
+The array now looks like this:
+```cpp
+arr = {10, 20, 60, 5, 60, 70};
+```
+
+---
+
+#### Step 11: Right Sub-Half (`mergeSort(arr, 5, 5)`)
+- `l == r`, so the function returns.
+
+---
+
+#### Step 12: Merge (`_merge(arr, 3, 4, 5)`)
+Merge the subarrays:
+- Left subarray: `[5, 60]` (indices `3 to 4`).
+- Right subarray: `[70]` (index `5`).
+- Merged result: `[5, 60, 70]`.
+
+The array now looks like this:
+```cpp
+arr = {10, 20, 60, 5, 60, 70};
+```
+
+---
+
+#### Step 13: Final Merge (`_merge(arr, 0, 2, 5)`)
+Merge the two main halves:
+- Left subarray: `[10, 20, 60]` (indices `0 to 2`).
+- Right subarray: `[5, 60, 70]` (indices `3 to 5`).
+- Merged result: `[5, 10, 20, 60, 60, 70]`.
+
+Final sorted array:
+```cpp
+arr = {5, 10, 20, 60, 60, 70};
+```
+
+---
+
+### Key Points About the Recursion
+1. **Recursive Breakdown**: The array is divided into halves until single-element subarrays are reached (base case).
+2. **Merge Process**: The `_merge` function combines two sorted subarrays into a single sorted array.
+3. **Recursive Backtracking**: After reaching the base case, the recursion "backs up" step by step, merging sorted subarrays.
+
+---
+
+### Visualization of the Recursive Calls
+```
+mergeSort(arr, 0, 5)
+ ├── mergeSort(arr, 0, 2)
+ │    ├── mergeSort(arr, 0, 1)
+ │    │    ├── mergeSort(arr, 0, 0)
+ │    │    ├── mergeSort(arr, 1, 1)
+ │    │    └── _merge(arr, 0, 0, 1)
+ │    ├── mergeSort(arr, 2, 2)
+ │    └── _merge(arr, 0, 1, 2)
+ ├── mergeSort(arr, 3, 5)
+ │    ├── mergeSort(arr, 3, 4)
+ │    │    ├── mergeSort(arr, 3, 3)
+ │    │    ├── mergeSort(arr, 4, 4)
+ │    │    └── _merge(arr, 3, 3, 4)
+ │    ├── mergeSort(arr, 5, 5)
+ │    └── _merge(arr, 3, 4, 5)
+ └── _merge(arr, 0, 2, 5)
+```
+---
+
+## Time and Space Complexity
+
+| Case           | Time Complexity | Space Complexity |
+|----------------|----------------|------------------|
+| **Best Case**   | O(n log n)      | O(n)             |
+| **Worst Case**  | O(n log n)      | O(n)             |
+| **Average Case**| O(n log n)      | O(n)             |
+
+---
+
+## Key Characteristics
+- **Stable**: Maintains the relative order of equal elements.
+- **Efficient**: Performs well for large datasets due to its logarithmic time complexity.
 
 ---
