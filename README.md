@@ -1978,3 +1978,96 @@ mergeSort(arr, 0, 5)
 - **Efficient**: Performs well for large datasets due to its logarithmic time complexity.
 
 ---
+
+## 📌**Quick Sort Algorithm**
+Quick Sort is an efficient, divide-and-conquer sorting algorithm. It works by partitioning an array into smaller sub-arrays based on a pivot element and recursively sorting them.
+
+---
+
+### **Algorithm Steps**
+1. Choose a **pivot** element from the array.
+2. **Partition** the array such that:
+   - Elements smaller than the pivot are placed on the left.
+   - Elements greater than the pivot are placed on the right.
+3. Recursively apply the above steps to the left and right sub-arrays.
+
+---
+
+### **Key Concepts**
+- **Divide-and-Conquer**: Quick Sort divides the problem into smaller sub-problems, sorts them, and combines the results.
+- **In-place Sorting**: Quick Sort sorts the array without requiring extra space.
+
+---
+
+### 🚀**C++ Implementation**
+![image](https://github.com/user-attachments/assets/6cb03378-e7fd-41e7-b557-49293df77d53)
+
+---
+
+### **Explanation of the Code**
+
+1. **`partition` Function**:
+   - Selects the pivot element (last element in this case).
+   - Rearranges elements such that those smaller than the pivot are on the left, and those larger are on the right.
+   - Returns the index of the pivot after partitioning.
+
+2. **`quickSort` Function**:
+   - Recursively sorts the left and right sub-arrays by calling the partition function.
+
+3. **`printArray` Function**:
+   - A utility function to display the array at any stage.
+
+4. **Main Function**:
+   - Initializes the array and calls `quickSort` to sort it.
+   - Displays the original and sorted array.
+
+---
+
+### **Example**
+
+#### **Input**:
+```
+Original array: 10, 7, 8, 9, 1, 5
+```
+
+#### **Step-by-Step Process**:
+1. Choose `5` as the pivot.
+2. Partition the array: `[1, 5, 8, 9, 10, 7]`.
+3. Recursively apply Quick Sort to left (`[1]`) and right (`[8, 9, 10, 7]`) sub-arrays.
+
+#### **Output**:
+```
+Sorted array: 1, 5, 7, 8, 9, 10
+```
+
+---
+
+### **Complexity Analysis**
+1. **Time Complexity**:
+   - Best Case: ` O(n log n(`
+   - Worst Case: `O(n^2)` (Occurs when the pivot is always the smallest or largest element)
+   - Average Case: `O(n log n)`
+
+2. **Space Complexity**:
+   - `O(log n)` for recursive calls.
+
+---
+
+### **Advantages of Quick Sort**
+- Faster for large datasets compared to other algorithms like Bubble Sort or Insertion Sort.
+- In-place sorting minimizes memory usage.
+
+---
+
+### **Disadvantages of Quick Sort**
+- Performance degrades for nearly sorted arrays (use optimizations like Randomized Quick Sort to address this).
+
+---
+
+### **Tips for Optimization**
+- Use **Randomized Quick Sort**: Choose a random pivot to reduce the chances of worst-case complexity.
+- Use **Hybrid Approaches**: Combine Quick Sort with Insertion Sort for small sub-arrays.
+
+---
+
+📌🚀
