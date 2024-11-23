@@ -2070,4 +2070,92 @@ Sorted array: 1, 5, 7, 8, 9, 10
 
 ---
 
+## 📌**Heap Sort Algorithm**
+
+### Overview
+Heap Sort is a popular comparison-based sorting algorithm that uses a binary heap data structure. It ensures the sorted order by repeatedly building and adjusting the heap.  
+Heap Sort operates in **O(n log n)** time complexity and can work in two modes:
+1. **Max-Heap** (Descending Order)
+2. **Min-Heap** (Ascending Order)
+
+---
+
+### **Key Concepts**
+
+#### 1. **Heapify**
+The `heapify` function ensures the heap property is maintained for a given node and its children:
+- **Max-Heap property**: Parent node is larger than its children.
+- **Min-Heap property**: Parent node is smaller than its children.
+
+#### 2. **Build Heap**
+The `buildHeap` function organizes an unordered array into a heap. It starts heapifying from the last non-leaf node to the root.
+
+#### 3. **Heap Sort**
+The `heapSort` function repeatedly extracts the largest (or smallest) element from the heap, places it at the end of the array, and reduces the heap size. This ensures the array becomes sorted.
+
+---
+
+### 🚀**C++ Code Explanation**
+![image](https://github.com/user-attachments/assets/ff8a9625-a1ae-4f1f-95ff-6f9f2e2712c0)
+
+
+---
+
+### **Explanation of Each Function**
+
+1. **`heapify` Function**:
+   - Checks the children of the current node to maintain the Max-Heap property.
+   - Swaps the current node with the largest child if the heap property is violated.
+   - Recursively applies this adjustment down the subtree.
+
+2. **`buildHeap` Function**:
+   - Starts from the last non-leaf node (`n/2 - 1`) and heapifies each subtree.
+   - Ensures that the entire array satisfies the Max-Heap property before sorting.
+
+3. **`heapSort` Function**:
+   - Calls `buildHeap` to construct the heap.
+   - Iteratively moves the root (largest element in Max-Heap) to the end of the array.
+   - Reduces the heap size and calls `heapify` to restore the heap property.
+
+4. **`printArr` Function**:
+   - Utility function to print the array.
+
+5. **`main` Function**:
+   - Demonstrates how to use `heapSort` to sort an array.
+
+---
+
+### **Example**
+
+#### Input:
+```
+Array: [90, 15, 70, 20, 110]
+```
+
+#### Process:
+1. **Build Max-Heap**:  
+   ```
+   [110, 90, 70, 20, 15]
+   ```
+
+2. **Heap Sort** (Extract root and heapify remaining elements):  
+   ```
+   Step 1: Swap 110 ↔ 15 → [15, 90, 70, 20, 110], Heapify → [90, 20, 70, 15, 110]
+   Step 2: Swap 90 ↔ 15 → [15, 20, 70, 90, 110], Heapify → [70, 20, 15, 90, 110]
+   Step 3: Swap 70 ↔ 15 → [15, 20, 70, 90, 110], Heapify → [20, 15, 70, 90, 110]
+   Step 4: Swap 20 ↔ 15 → [15, 20, 70, 90, 110]
+   ```
+
+#### Output:
+```
+Sorted Array: [15, 20, 70, 90, 110]
+```
+
+---
+
+### **Key Advantages of Heap Sort**
+1. **Time Complexity**: `O(n log n)` for all cases.
+2. **Space Complexity**: `O(1)`, as it’s an in-place sorting algorithm.
+---
 📌🚀
+
