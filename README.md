@@ -2157,5 +2157,74 @@ Sorted Array: [15, 20, 70, 90, 110]
 1. **Time Complexity**: `O(n log n)` for all cases.
 2. **Space Complexity**: `O(1)`, as it’s an in-place sorting algorithm.
 ---
-📌🚀
 
+## 📌**Linear Search (Sequential Search)**
+
+Linear Search is a simple and straightforward algorithm used to find the position of a target element in a list or array. It sequentially checks each element in the list until it finds a match or reaches the end.
+
+### **How It Works**
+1. Start from the first element of the array.
+2. Compare each element with the target element (key).
+3. If a match is found, return the index of the element.
+4. If no match is found by the end of the array, indicate that the element is not present.
+
+### 🚀**C++ Code**
+![image](https://github.com/user-attachments/assets/53b8a4b6-68eb-42e9-8c18-f39c433ba015)
+
+
+### **Explanation of the Code**
+1. **Input Array and Size**:
+   - `int arr[] = {90, 10, 30, 50, 100};`
+     - This is the array where the search is performed.
+   - `int n = sizeof(arr) / sizeof(arr[0]);`
+     - This calculates the size of the array by dividing the total memory size of the array by the size of one element.
+
+2. **Input from User**:
+   - `cin >> element;`
+     - Prompts the user to enter the element they wish to search for in the array.
+
+3. **Linear Search Function**:
+   - The function `linearSearch()`:
+     - Takes three arguments: the array, its size, and the target element (key).
+     - Uses a `for` loop to iterate over each element in the array.
+     - Compares each element `arr[i]` with the target `key`.
+     - If a match is found, it prints the index and exits the function using `return`.
+     - If the loop completes without finding the target, it prints "Element not found!".
+
+4. **Output**:
+   - If the element is found: The index is displayed.
+   - If not found: A message indicates that the element is not in the array.
+
+### **Example**
+#### Input:
+```
+Enter the element you want to search for: 50
+```
+#### Output:
+```
+Index of the element 50 is : 3
+```
+
+#### Input:
+```
+Enter the element you want to search for: 25
+```
+#### Output:
+```
+Element not found!
+```
+
+### **Time Complexity**
+- **Best Case**: `O(1)` — When the target element is the first element in the array.
+- **Worst Case**: `O(n)` — When the target element is not in the array or is the last element.
+- **Average Case**: `O(n)`
+
+### **Advantages**
+- Simple to implement.
+- Does not require the array to be sorted.
+
+### **Disadvantages**
+- Inefficient for large datasets compared to other search algorithms like Binary Search.
+
+---
+📌🚀
