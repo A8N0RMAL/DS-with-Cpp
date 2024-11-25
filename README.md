@@ -2313,11 +2313,5 @@ Recursive Binary Search
 Enter the element you want to search for: 30
 Index of element 30 is: 2
 ```
-
----
-
-### **Conclusion**
-Binary Search is a powerful algorithm for searching sorted data efficiently. This repository provides both **iterative** and **recursive** implementations with clear explanations and examples for better understanding.
-
 ---
 📌🚀
