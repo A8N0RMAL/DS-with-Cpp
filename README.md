@@ -2227,4 +2227,97 @@ Element not found!
 - Inefficient for large datasets compared to other search algorithms like Binary Search.
 
 ---
+
+### 📌**Binary Search Algorithm**
+
+Binary Search is an efficient searching algorithm that works on sorted arrays. It follows the "divide-and-conquer" approach, repeatedly dividing the search interval in half and reducing the time complexity to `O(log n)`. 
+
+This repository explains:
+1. **Iterative Binary Search** implementation.
+2. **Recursive Binary Search** implementation.
+3. Detailed explanations for each function and its steps.
+4. Examples to understand how the algorithm works.
+
+---
+
+### **C++ Implementation**
+
+#### 🚀**Iterative Binary Search**
+![image](https://github.com/user-attachments/assets/bc95a661-5edb-4f8e-8341-229f288ad0c3)
+
+
+#### 🚀**Recursive Binary Search**
+![image](https://github.com/user-attachments/assets/72939725-91e7-4dc7-8d7a-c1eed0a0dd57)
+
+
+#### 🚀**Driver Code**
+![image](https://github.com/user-attachments/assets/510e50ff-c30e-4537-b0dd-aa76ee3e7365)
+
+---
+
+### **Explanation of Each Function**
+
+#### **Iterative Binary Search**
+1. The function takes the **array**, the **left index**, the **right index**, and the **element to search** as inputs.
+2. While the left index is less than or equal to the right:
+   - Compute the **middle index**.
+   - If the element at the middle index is equal to the target, return the index.
+   - If the target is greater, adjust the `left` pointer to `mid + 1`.
+   - If the target is smaller, adjust the `right` pointer to `mid - 1`.
+3. If the loop ends, return `-1` (element not found).
+
+#### **Recursive Binary Search**
+1. This function is similar but uses recursion:
+   - If the **left index** is greater than the **right index**, return `-1` (base case for not found).
+   - Compute the **middle index**.
+   - If the element at the middle index matches the target, return the index.
+   - Recursively call the function:
+     - For the **right half** if the target is greater.
+     - For the **left half** if the target is smaller.
+
+#### **Driver Function (`main`)**
+1. Initialize an array and calculate its size.
+2. Prompt the user to input the element they want to search.
+3. Call **Iterative Binary Search**, print the result.
+4. Prompt the user for another input.
+5. Call **Recursive Binary Search**, print the result.
+
+---
+
+### **Example**
+
+#### Input:
+```
+Array: {10, 20, 30, 40, 50, 60, 70}
+Search Element: 30
+```
+
+#### Iterative Search:
+1. Start with `left = 0`, `right = 6`.
+2. Calculate `mid = 3`. `arr[3] = 40` is greater than 30. Adjust `right = 2`.
+3. Recalculate `mid = 1`. `arr[1] = 20` is less than 30. Adjust `left = 2`.
+4. Recalculate `mid = 2`. `arr[2] = 30`, return 2.
+
+#### Recursive Search:
+1. Start with `left = 0`, `right = 6`, calculate `mid = 3`. `arr[3] = 40` is greater, call the function for left half (`right = 2`).
+2. For `left = 0`, `right = 2`, calculate `mid = 1`. `arr[1] = 20` is less, call the function for right half (`left = 2`).
+3. For `left = 2`, `right = 2`, calculate `mid = 2`. `arr[2] = 30`, return 2.
+
+#### Output:
+```
+Iterative Binary Search
+Enter the element you want to search for: 30
+Index of element 30 is: 2
+
+Recursive Binary Search
+Enter the element you want to search for: 30
+Index of element 30 is: 2
+```
+
+---
+
+### **Conclusion**
+Binary Search is a powerful algorithm for searching sorted data efficiently. This repository provides both **iterative** and **recursive** implementations with clear explanations and examples for better understanding.
+
+---
 📌🚀
