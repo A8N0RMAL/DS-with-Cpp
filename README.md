@@ -2232,7 +2232,7 @@ Element not found!
 
 Binary Search is an efficient searching algorithm that works on sorted arrays. It follows the "divide-and-conquer" approach, repeatedly dividing the search interval in half and reducing the time complexity to `O(log n)`. 
 
-This repository explains:
+Let's explain:
 1. **Iterative Binary Search** implementation.
 2. **Recursive Binary Search** implementation.
 3. Detailed explanations for each function and its steps.
