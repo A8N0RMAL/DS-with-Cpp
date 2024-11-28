@@ -2314,4 +2314,161 @@ Enter the element you want to search for: 30
 Index of element 30 is: 2
 ```
 ---
+
+### 📌**Searching Algorithms Overview**
+1. **Blind Search Algorithm (Uninformed Search):**
+   - Does not use additional information about the problem's domain.
+   - Examples: **Breadth-First Search (BFS)** and **Depth-First Search (DFS)**.
+2. **Heuristic Search Algorithm (Informed Search):**
+   - Uses extra information, such as path costs, to guide the search.
+   - Examples: **Best-First Search**, **A* (A-Star)**, and **Tabu Search**.
+![Screenshot (66)](https://github.com/user-attachments/assets/88667ab6-ddf5-4743-bcbe-67e1c7d3a4e8)
+
+---
+
+### **Understanding Breadth-First Search (BFS)**
+#### **1. BFS Spanning Tree (Graph Example - Left Side):**
+- BFS creates a spanning tree by exploring nodes level by level.
+- Starting at node `1`, BFS traverses:
+  - **Level 1:** Visit direct neighbors `4` and `2`.
+  - **Level 2:** Visit their neighbors: `3`, `5`, `8`, `7`.
+  - **Level 3:** Visit nodes `10`, `9`, and `6` connected to earlier levels.
+- Result: **BFS Traversal = `1 → 4 → 2 → 3 → 5 → 8 → 7 → 10 → 9 → 6`**
+![Screenshot (67)](https://github.com/user-attachments/assets/e95ae1c8-8fab-47d5-8112-18f829f8e325)
+
+---
+
+#### **2. BFS Queue Representation (Middle Section):**
+- **Queue Mechanism:**
+  - BFS uses a queue to track nodes as they are explored.
+  - Example:
+    - Start: `Q = [1]`
+    - Visit `4` and `2`: `Q = [4, 2]`
+    - Visit `3`, `5`, `8`, `7`: `Q = [3, 5, 8, 7]`
+  - Continue until all nodes are processed.
+
+- **Key Observations:**
+  - The queue represents the current level of nodes being explored.
+  - This ensures BFS always completes one level before moving to the next.
+
+---
+
+#### **3. Graph with Weights (Bottom Section):**
+- BFS is visualized on a weighted graph, though BFS does not use weights directly.
+- Starting from node `S`:
+  - Distance to `S` is `0`.
+  - Neighbors (`W` and `R`) have distances `1` and are visited next.
+  - Continue expanding outward level by level:
+    - Distance to `T`, `X`, and others increase progressively.
+
+---
+
+#### **4. Visiting State vs. Complete State:**
+- **Visiting State:**
+  - Tracks nodes currently being processed.
+  - Example: `S → W → R` (processed in order).
+- **Complete State:**
+  - Tracks nodes that have already been visited.
+  - Prevents revisiting nodes and ensures no infinite loops.
+- **Queue State:**
+  - Updates dynamically as nodes are enqueued and dequeued for processing.
+![Screenshot (68)](https://github.com/user-attachments/assets/28680418-2afe-41f3-b57f-a7dc6edf4e8d)
+
+---
+
+#### **5. BFS Path Distance:**
+- BFS is ideal for unweighted graphs to find the shortest path.
+- Example:
+  - From node `S`:
+    - Distance to `W` and `R` is `1`.
+    - Distance to `T` and `X` is `2`, and so on.
+  - BFS ensures all shortest paths are explored systematically.
+![Screenshot (69)](https://github.com/user-attachments/assets/ee678bff-00e3-4e5f-80ee-6ee214073a31)
+
+---
+
+### **Key Takeaways from the Image**
+1. BFS systematically explores the graph level by level.
+2. The **spanning tree** shows how BFS connects nodes starting from the source.
+3. **Queue visualization** demonstrates how BFS progresses through the graph.
+4. The concept of **visiting state** and **complete state** helps understand node processing and prevents revisits.
+5. BFS works for unweighted graphs to determine the shortest path and can be extended to explore connected components or solve traversal problems.
+
+
+---
+
+## 📌**Breadth-First Search (BFS) Algorithm**
+
+#### **Introduction**
+Breadth-First Search (BFS) is a graph traversal algorithm that explores all the vertices of a graph in breadthward motion. It starts at the root node (or any arbitrary node) and explores all its neighbors before moving to the next level of neighbors.
+
+### **Key Features**
+- **Time Complexity**: `O(V + E)`, where `V` is the number of vertices and `E` is the number of edges.
+- **Space Complexity**: `O(V)`, due to the storage of the queue.
+- **Applications**:
+  - Finding the shortest path in an unweighted graph.
+  - Level-order traversal of a tree.
+  - Cycle detection in an undirected graph.
+
+---
+
+### **Algorithm Steps**
+1. Initialize a queue and enqueue the starting node.
+2. Mark the starting node as visited.
+3. While the queue is not empty:
+   - Dequeue a node from the front.
+   - For each unvisited neighbor of this node:
+     - Mark it as visited.
+     - Enqueue it into the queue.
+
+---
+
+### 🚀**C++ Implementation**
+![image](https://github.com/user-attachments/assets/11e00dce-b7e8-40b5-9d52-0fe5d2c563db)
+
+
+---
+
+### **Explanation of Code**
+
+1. **Adjacency List Representation**:
+   - The graph is represented using an adjacency list (`vector<vector<int>> adjList`), where each index corresponds to a node and contains a list of its neighbors.
+
+2. **Visited Array**:
+   - A `vector<bool>` keeps track of which nodes have already been visited to avoid revisiting them.
+
+3. **Queue Initialization**:
+   - A queue is used to manage the BFS traversal order. Nodes are added to the queue when they are discovered and processed in FIFO order.
+
+4. **Main BFS Logic**:
+   - The main loop dequeues a node, prints it, and explores its neighbors. Unvisited neighbors are marked as visited and enqueued.
+
+---
+
+#### **Example**
+Given the graph:
+```
+    0 -- 1 -- 3
+    |    |
+    2    4
+    |    
+    5 -- 6
+```
+Adjacency list:
+```
+0 -> 1, 2
+1 -> 0, 3, 4
+2 -> 0, 5, 6
+3 -> 1
+4 -> 1
+5 -> 2
+6 -> 2
+```
+
+**Output**:
+```
+Breadth-First Search starting from node 0: 0 1 2 3 4 5 6
+```
+---
+
 📌🚀
