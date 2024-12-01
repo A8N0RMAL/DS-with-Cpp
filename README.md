@@ -2471,4 +2471,115 @@ Breadth-First Search starting from node 0: 0 1 2 3 4 5 6
 ```
 ---
 
+
+
+### 📌Depth First Search Algorithm (DFS)
+
+#### Introduction
+Depth First Search (DFS) is an algorithm for traversing or searching graph and tree data structures. Starting from the root (or any arbitrary node for graphs), DFS explores as far as possible along each branch before backtracking. 
+
+DFS can be implemented using:
+- **Recursion** (implicit stack)
+- **Explicit stack** (iterative approach)
+
+#### Applications
+- Detecting cycles in a graph
+- Solving puzzles such as mazes
+- Topological sorting
+- Pathfinding algorithms
+- Connected components in graphs
+
+---
+
+### 🚀C++ Implementation of DFS
+#### Example Code: Recursive Approach
+![image](https://github.com/user-attachments/assets/d589ca50-093e-4d7b-a4d3-ddd85141d07c)
+
+
+---
+
+#### Explanation of the Code
+
+1. **Graph Representation**
+   - The graph is represented using an adjacency list. Each node has a list of its adjacent nodes.
+   - `vector<vector<int>> adjList` stores adjacency lists for all vertices.
+
+2. **Edge Addition**
+   - `addEdge(int u, int v)` adds an edge between nodes `u` and `v`. For undirected graphs, both directions are added.
+
+3. **DFS Traversal**
+   - **Recursive Helper (`dfsUtil`)**:
+     - Marks the current node as visited (`visited[node] = true`).
+     - Prints the node.
+     - Recursively visits all unvisited adjacent nodes.
+   - **Driver Function (`DFS`)**:
+     - Initializes a `visited` vector to keep track of visited nodes.
+     - Calls `dfsUtil` to start traversal.
+
+4. **Main Function**
+   - Initializes a graph with 5 nodes.
+   - Adds edges to create the graph.
+   - Starts DFS from node `0`.
+
+---
+
+#### Example Graph and Output
+
+**Graph Visualization:**
+
+```
+    0
+   / \
+  1   4
+ /|\
+2 3 4
+```
+
+**DFS Traversal Output:**
+![image](https://github.com/user-attachments/assets/b8505acf-f50a-442a-a369-8f7f4d264f64)
+
+
+---
+
+### 🚀Example Code: Iterative Approach (Using Stack)
+![image](https://github.com/user-attachments/assets/27513e15-fab3-404a-b9d3-760fa794a4ac)
+
+
+---
+
+### Directory Structure for Your Repository
+
+```
+Data-Structures/
+├── Graphs/
+│   ├── DepthFirstSearch/
+│   │   ├── RecursiveDFS.cpp
+│   │   ├── IterativeDFS.cpp
+│   │   ├── README.md
+```
+
+---
+
+### README.md Example for DFS
+
+#### Depth First Search (DFS)
+
+DFS is a fundamental graph traversal algorithm that explores as far as possible along each branch before backtracking.
+
+#### Implementation
+1. **Recursive DFS**: A straightforward approach using function calls and an implicit stack.
+2. **Iterative DFS**: Uses an explicit stack for managing traversal.
+
+#### Example Usage
+- Compile the code:
+  ```
+  g++ RecursiveDFS.cpp -o RecursiveDFS
+  ```
+- Run the code:
+  ```
+  ./RecursiveDFS
+  ```
+
+---
+
 📌🚀
