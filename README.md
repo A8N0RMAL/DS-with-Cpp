@@ -2582,4 +2582,100 @@ DFS is a fundamental graph traversal algorithm that explores as far as possible 
 
 ---
 
+
+## 📌**Dijkstra's Shortest Path Algorithm**
+
+Dijkstra's algorithm is a popular algorithm used to find the shortest path between nodes in a graph, which can represent road networks, networks of routers, or other scenarios.
+
+### **Features**
+- Finds the shortest path from a single source to all other vertices in a weighted graph.
+- Works only with graphs having **non-negative weights**.
+
+---
+
+### **Directory Structure**
+```
+/Data-Structures/Dijkstras-Algorithm
+├── README.md
+├── main.cpp   # Contains the C++ implementation
+└── examples/
+    ├── example1.txt  # Example input and output
+    ├── example2.txt
+```
+
+---
+
+### **README.md Structure**
+
+#### **1. Introduction**
+- A brief description of Dijkstra's algorithm, its applications, and why it's important.
+
+#### **2. Algorithm Explanation**
+Include a step-by-step explanation:
+1. Assign distances to all vertices: Set to infinity (`INT_MAX`) except for the source node, which is set to 0.
+2. Use a **priority queue** (or min-heap) to process the next closest vertex.
+3. For each processed vertex, update the distances of its neighboring vertices if a shorter path is found.
+4. Repeat until all vertices are processed or the priority queue is empty.
+
+---
+
+#### 🚀**3. C++ Implementation**
+![image](https://github.com/user-attachments/assets/9364d712-d9d8-49c2-8975-240ec7a8a164)
+
+
+---
+
+#### **4. Explanation of Each Function**
+Break down each part of the code:
+
+1. **Graph Representation:**
+   - The graph is represented as an adjacency list using a `vector` of `Edge` structs.
+   - Each edge contains the target vertex and its weight.
+
+2. **Distance Array Initialization:**
+   - `vector<int> distances(n, INT_MAX)`: Keeps track of the shortest distances to each vertex. Initially set to infinity for all vertices except the source.
+
+3. **Priority Queue:**
+   - A min-heap is used to process the vertex with the smallest known distance efficiently.
+
+4. **Relaxation:**
+   - For every adjacent vertex, check if the path through the current vertex is shorter and update the distance if so.
+
+5. **Output:**
+   - After the algorithm finishes, the `distances` array contains the shortest path from the source to every other vertex.
+
+---
+
+#### **5. Example Usage**
+Provide examples with input and output:
+
+**Input Graph (Adjacency List Format)**:
+```
+Graph:
+0 -> (1, 4), (2, 1)
+1 -> (3, 1)
+2 -> (1, 2), (3, 5)
+3 -> None
+```
+
+**Example Code to Run:**
+![image](https://github.com/user-attachments/assets/c918e2a9-ae24-48a8-8c93-5850f23d5c1f)
+
+**Output:**
+```
+Vertex  Distance from Source
+0       0
+1       3
+2       1
+3       4
+```
+
+
+#### **6. Conclusion**
+Summarize the algorithm's efficiency:
+- **Time Complexity**: O(V + E log V), where (V) is the number of vertices and (E) is the number of edges.
+- **Space Complexity**: O(V + E).
+
+---
+
 📌🚀
