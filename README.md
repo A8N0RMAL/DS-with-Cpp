@@ -2593,20 +2593,6 @@ Dijkstra's algorithm is a popular algorithm used to find the shortest path betwe
 
 ---
 
-### **Directory Structure**
-```
-/Data-Structures/Dijkstras-Algorithm
-├── README.md
-├── main.cpp   # Contains the C++ implementation
-└── examples/
-    ├── example1.txt  # Example input and output
-    ├── example2.txt
-```
-
----
-
-### **README.md Structure**
-
 #### **1. Introduction**
 - A brief description of Dijkstra's algorithm, its applications, and why it's important.
 
